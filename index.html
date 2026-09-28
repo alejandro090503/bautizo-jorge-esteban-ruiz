@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0A0908">
+  <title>Jorge Esteban Ruiz · Mi Bautizo · 27 · XI · MMXXVI</title>
+  <meta name="description" content="Bautizo de Jorge Esteban Ruiz — viernes 27 de noviembre de 2026, Mazatlán, Sinaloa.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bautizo de Jorge Esteban Ruiz">
+  <meta property="og:description" content="27 de noviembre de 2026 · Mazatlán, Sinaloa. Acompañanos en este día tan especial.">
+  <meta property="og:image" content="https://bautizo-jorge-esteban-ruiz.vercel.app/og.jpg">
+  <meta property="og:url" content="https://bautizo-jorge-esteban-ruiz.vercel.app">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+/* ── TOKENS ───────────────────────────────────────────── */
+:root {
+  --gold:      #D4AF37;
+  --gold-lt:   #F7E7CE;
+  --gold-dk:   #9A7B1E;
+  --gold-dim:  rgba(212,175,55,.15);
+  --silver:    #8E9091;
+  --sand:      #D4C5B2;
+  --cream:     #F7F3EC;
+  --foil:      linear-gradient(135deg,#F7E7CE 0%,#D4AF37 38%,#9A7B1E 62%,#F7E7CE 100%);
+  --ink:       #0A0908;
+  --ink2:      #181610;
+  --ink3:      #222018;
+  --spring:    cubic-bezier(.34,1.56,.64,1);
+  --smooth:    cubic-bezier(.25,.46,.45,.94);
+}
+
+/* ── RESET ────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--ink);color:var(--cream);
+  font-family:'Lato',sans-serif;font-weight:400;font-size:16px;line-height:1.6;
+  overflow-x:hidden;max-width:430px;margin:0 auto;
+  -webkit-tap-highlight-color:transparent;
+}
+section{padding:64px 22px}
+
+/* ── LOADER ───────────────────────────────────────────── */
+#loader{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--ink);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+}
+.ld-names{
+  font-family:'Great Vibes',cursive;font-size:72px;color:var(--gold);
+  opacity:0;animation:ldFade .9s ease .3s forwards;
+}
+.ld-track{width:100px;height:1px;background:rgba(212,175,55,.18);overflow:hidden}
+.ld-bar{
+  height:100%;background:linear-gradient(to right,transparent,var(--gold));
+  width:0;animation:ldBar 1.3s var(--smooth) .5s forwards;
+}
+@keyframes ldFade{to{opacity:1}}
+@keyframes ldBar{to{width:100%}}
+
+/* ── PROGRESS BAR ─────────────────────────────────────── */
+#prog{
+  position:fixed;top:0;left:0;height:2px;width:0%;z-index:1000;
+  background:linear-gradient(to right,var(--gold),var(--gold-lt));
+  box-shadow:0 0 10px rgba(212,175,55,.5);
+  transition:width .08s linear;pointer-events:none;
+}
+
+/* ── MUSIC BTN ────────────────────────────────────────── */
+.music-btn{
+  position:fixed;bottom:22px;right:22px;width:46px;height:46px;
+  border-radius:50%;background:rgba(24,22,16,.82);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(212,175,55,.35);color:var(--gold);font-size:18px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:999;
+  box-shadow:0 4px 24px rgba(0,0,0,.45);
+  transition:all .3s var(--spring);
+}
+.music-btn:active{transform:scale(.88)}
+.music-btn.on{border-color:var(--gold);background:rgba(212,175,55,.14);
+  animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(212,175,55,.35),0 4px 24px rgba(0,0,0,.45)}
+  50%{box-shadow:0 0 0 9px rgba(212,175,55,0),0 4px 24px rgba(0,0,0,.45)}
+}
+
+/* ── TOAST ────────────────────────────────────────────── */
+#toast{
+  position:fixed;bottom:78px;left:50%;
+  transform:translateX(-50%) translateY(16px);
+  background:rgba(18,16,10,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--gold);color:var(--gold);
+  padding:11px 22px;border-radius:40px;
+  font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  opacity:0;transition:all .4s var(--spring);
+  white-space:nowrap;z-index:998;pointer-events:none;
+}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── HELPERS ──────────────────────────────────────────── */
+.lbl{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);text-align:center;display:block}
+.ttl{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;text-align:center;color:var(--cream);line-height:1.25;margin-top:6px}
+.gline{width:50px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:18px auto}
+
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  width:100%;padding:15px 16px;
+  border:1px solid var(--gold);border-radius:7px;
+  background:transparent;color:var(--gold);
+  font-family:'Lato',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;-webkit-appearance:none;
+  position:relative;overflow:hidden;
+  transition:background .25s, transform .2s var(--spring);
+}
+.btn:active{transform:scale(.96);background:rgba(212,175,55,.08)}
+.btn+.btn{margin-top:10px}
+.btn-gold{
+  background:var(--gold);color:#1a1405;font-weight:700;
+  box-shadow:0 4px 22px rgba(212,175,55,.25);
+  transition:all .3s var(--spring);
+}
+.btn-gold:active{background:var(--gold-lt);transform:scale(.96)}
+
+/* ── HERO ─────────────────────────────────────────────── */
+#hero{
+  min-height:100svh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  position:relative;overflow:hidden;padding:48px 28px 88px;
+}
+
+/* Background photo */
+.h-bg{
+  position:absolute;top:-20%;left:0;right:0;bottom:-20%;
+  z-index:0;will-change:transform;
+}
+.h-bg img{
+  width:100%;height:100%;object-fit:cover;object-position:center 35%;
+  filter:brightness(.52) saturate(1.1);
+  display:block;
+}
+
+/* Gradient overlay */
+.h-ov{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(to bottom,
+      rgba(10,9,8,.55) 0%,
+      rgba(10,9,8,.18) 35%,
+      rgba(10,9,8,.18) 60%,
+      rgba(10,9,8,.72) 100%);
+}
+
+/* Decorative border frame */
+.h-frame{
+  position:absolute;top:20px;left:20px;right:20px;bottom:20px;
+  border:1px solid rgba(212,175,55,.18);z-index:2;pointer-events:none;
+}
+.h-frame::before,.h-frame::after{
+  content:'✦';position:absolute;color:var(--gold);font-size:10px;
+  opacity:.5;line-height:1;
+}
+.h-frame::before{top:-6px;left:50%;transform:translateX(-50%)}
+.h-frame::after{bottom:-6px;left:50%;transform:translateX(-50%)}
+
+/* Particles */
+.h-particles{position:absolute;inset:0;z-index:2;overflow:hidden;pointer-events:none}
+
+/* Content */
+.h-cnt{
+  position:relative;z-index:3;text-align:center;
+  display:flex;flex-direction:column;align-items:center;
+}
+.h-we  {font-size:14px;font-weight:700;letter-spacing:7px;text-transform:uppercase;color:var(--gold-lt);margin-top:22px}
+.h-div {display:flex;align-items:center;gap:14px;margin:20px 0 6px;width:100%;justify-content:center}
+.h-div::before,.h-div::after{content:'';flex:1;max-width:65px;height:1px;background:linear-gradient(to right,transparent,var(--gold))}
+.h-div::after{background:linear-gradient(to left,transparent,var(--gold))}
+.h-div-dot{font-size:10px;color:var(--gold);letter-spacing:6px}
+
+/* Name clip reveal */
+.h-clip{overflow:hidden;line-height:1}
+.h-name{
+  font-family:'Great Vibes',cursive;font-size:74px;color:var(--cream);display:block;
+  text-shadow:0 4px 30px rgba(0,0,0,.6);will-change:transform;
+}
+/* Acabado metalico (champan -> oro -> sombra) */
+.foil{
+  background:var(--foil);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  filter:drop-shadow(0 2px 10px rgba(0,0,0,.55));
+}
+@supports not (-webkit-background-clip:text){ .foil{color:var(--gold-lt);-webkit-text-fill-color:var(--gold-lt)} }
+.h-amp-clip{overflow:hidden;line-height:1;margin:6px 0}
+.h-amp{
+  font-family:'Great Vibes',cursive;font-size:54px;color:var(--gold);display:block;
+  will-change:transform;
+}
+.h-date-wrap{margin-top:28px}
+.h-date{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--gold-lt)}
+.h-city{font-size:13px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--cream);opacity:.8;margin-top:10px}
+
+/* Scroll cue */
+.h-scroll{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;z-index:3;
+}
+.h-scroll span{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:.85}
+.h-scroll-line{
+  width:1px;height:42px;
+  background:linear-gradient(to bottom,var(--gold),transparent);
+  transform-origin:top;
+  animation:scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine{
+  0%{transform:scaleY(0);opacity:1}
+  80%{transform:scaleY(1);opacity:.8}
+  100%{transform:scaleY(1);opacity:0}
+}
+
+/* ── COUNTDOWN ────────────────────────────────────────── */
+#countdown{
+  background:var(--ink2);padding:54px 22px;
+  border-top:1px solid rgba(212,175,55,.1);
+  border-bottom:1px solid rgba(212,175,55,.1);
+}
+.cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:30px}
+.cd-box{
+  text-align:center;padding:18px 6px 14px;
+  background:rgba(212,175,55,.05);
+  border:1px solid rgba(212,175,55,.16);border-radius:10px;
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  transition:transform .3s var(--spring);
+}
+.cd-box:active{transform:scale(.93)}
+.cd-num{
+  font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;
+  color:var(--gold);display:block;line-height:1;will-change:contents;
+}
+.cd-lbl{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--cream);opacity:.75;display:block;margin-top:6px}
+
+/* ── LOCATION ─────────────────────────────────────────── */
+#location{background:var(--ink)}
+.loc-card{
+  background:var(--ink2);border:1px solid rgba(212,175,55,.16);
+  border-radius:12px;padding:28px 22px;margin-top:20px;
+  position:relative;overflow:hidden;
+}
+.loc-card::before{
+  content:'';position:absolute;top:0;left:10%;right:10%;height:1px;
+  background:linear-gradient(to right,transparent,var(--gold),transparent);
+}
+.loc-type{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.loc-name{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:600;color:var(--cream);line-height:1.35}
+.loc-time{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;color:var(--gold);line-height:1;margin:16px 0 4px}
+.loc-time em{font-family:'Lato',sans-serif;font-style:normal;font-size:16px;font-weight:700;letter-spacing:2px;color:var(--gold-lt);opacity:.9;vertical-align:middle}
+.loc-addr{font-size:16px;font-weight:400;line-height:1.7;color:var(--cream);opacity:.82;margin-bottom:22px}
+
+/* ── CALENDAR ─────────────────────────────────────────── */
+#calendar{
+  background:var(--ink3);padding:54px 22px;text-align:center;
+  border-top:1px solid rgba(212,175,55,.09);
+  border-bottom:1px solid rgba(212,175,55,.09);
+}
+.cal-sub{font-size:16px;color:var(--cream);opacity:.85;line-height:1.7;margin:14px 0 28px}
+
+/* ── ITINERARY ────────────────────────────────────────── */
+#itinerary{background:var(--ink)}
+.timeline{margin-top:36px;position:relative}
+.tl-track{
+  position:absolute;left:62px;top:8px;
+  width:1px;height:0;
+  background:linear-gradient(to bottom,rgba(212,175,55,.45) 0%,rgba(212,175,55,.45) 90%,transparent 100%);
+  transform-origin:top;
+}
+.tl-row{display:flex;align-items:flex-start;gap:14px;margin-bottom:28px}
+.tl-t{font-family:'Lato',sans-serif;font-size:14px;font-weight:700;color:var(--gold);width:52px;flex-shrink:0;text-align:right;line-height:1.35;padding-top:3px}
+.tl-dot{
+  width:9px;height:9px;border-radius:50%;
+  border:1px solid var(--gold);background:var(--ink);
+  flex-shrink:0;margin-top:5px;position:relative;z-index:1;
+  transform:scale(0);transition:transform .4s var(--spring);
+}
+.tl-dot.on{transform:scale(1)}
+.tl-ev{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cream);font-weight:600;line-height:1.3}
+.tl-de{font-size:15px;color:var(--cream);opacity:.8;margin-top:5px;line-height:1.6}
+
+/* ── DRESSCODE ────────────────────────────────────────── */
+#dresscode{background:var(--ink2)}
+.dc-sub{text-align:center;font-size:16px;color:var(--cream);opacity:.85;line-height:1.7;margin:14px 0 32px}
+.palette{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-bottom:30px}
+.pal-item{text-align:center;cursor:pointer}
+.pal-sw{
+  width:52px;height:52px;border-radius:50%;
+  margin:0 auto 8px;
+  border:2px solid rgba(255,255,255,.08);
+  box-shadow:0 6px 20px rgba(0,0,0,.3);
+  will-change:transform;
+  transition:transform .2s var(--spring),box-shadow .2s;
+}
+.pal-sw:active{transform:scale(1.18)!important}
+.pal-nm{font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--cream);opacity:.85}
+.dc-note{
+  background:rgba(212,175,55,.04);border-left:2px solid var(--gold);
+  padding:18px 18px;border-radius:0 8px 8px 0;
+  font-size:15px;color:var(--cream);opacity:.88;line-height:1.7;
+}
+.dc-note strong{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--gold);display:block;margin-bottom:6px}
+
+/* ── FAMILY ───────────────────────────────────────────── */
+#family{background:var(--ink)}
+.fam-ttl{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;font-style:italic;color:var(--gold);text-align:center;margin:30px 0 16px}
+.fam-card{
+  background:var(--ink2);border:1px solid rgba(212,175,55,.13);
+  border-radius:10px;padding:18px 20px;margin-bottom:10px;text-align:center;
+  position:relative;overflow:hidden;
+  transition:transform .3s var(--spring);
+}
+.fam-card::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(to right,transparent,rgba(212,175,55,.25),transparent)}
+.fam-card:active{transform:scale(.97)}
+.fam-role{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.fam-nms{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--cream);line-height:1.6}
+.fam-sep{font-size:12px;opacity:.3}
+.sdiv{width:30px;height:1px;background:rgba(212,175,55,.18);margin:22px auto}
+
+/* ── GALLERY ──────────────────────────────────────────── */
+#gallery{background:var(--ink3);padding:64px 14px}
+.gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:32px}
+.g-item{border-radius:8px;overflow:hidden;background:var(--ink2);will-change:transform}
+.g-item:first-child{grid-column:1/-1;aspect-ratio:16/10}
+.g-item:not(:first-child){aspect-ratio:3/4}
+.g-item img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  filter:brightness(.85) saturate(.75);
+  transition:transform .6s var(--smooth),filter .4s;
+  will-change:transform;
+}
+.g-item:active img{transform:scale(1.05);filter:brightness(.95) saturate(.9)}
+
+/* ── RSVP ─────────────────────────────────────────────── */
+#rsvp{background:var(--ink)}
+.rsvp-sub{text-align:center;font-size:16px;color:var(--cream);opacity:.85;line-height:1.7;margin:14px 0 32px}
+.rsvp-dl{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--gold);font-style:italic}
+.rsvp-greeting{text-align:center;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--cream);margin-bottom:6px}
+.rsvp-passes{text-align:center;font-size:12px;color:var(--cream);opacity:.65;margin-bottom:26px}
+#rsvp-fields{display:flex;flex-direction:column;gap:10px}
+.rsvp-feedback{text-align:center;font-size:15px;line-height:1.65;margin-top:14px;color:var(--gold)}
+.qr-hint{text-align:center;font-size:15px;color:var(--cream);opacity:.82;line-height:1.7;margin:12px 0 24px}
+.qr-grid{display:flex;flex-direction:column;gap:14px;align-items:center}
+.qr-card{background:var(--ink2);border:1px solid var(--gold-dim);border-radius:10px;padding:22px 18px;text-align:center;width:100%;max-width:280px}
+.qr-card .qr-img{background:#fff;padding:10px;border-radius:8px;display:inline-block;line-height:0}
+.qr-card .qr-img canvas{display:block;width:170px;height:170px}
+.qr-name{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--gold);margin-top:14px}
+.qr-mesa{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--cream);opacity:.55;margin-top:4px}
+.qr-code-txt{font-family:'Courier New',monospace;font-size:13px;letter-spacing:2px;color:var(--cream);opacity:.6;margin-top:8px;user-select:all;-webkit-user-select:all}
+.qr-code-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);opacity:.7;margin-top:10px}
+.qr-dl{display:inline-flex;align-items:center;gap:7px;margin-top:14px;padding:9px 20px;background:transparent;border:1px solid rgba(212,175,55,.35);border-radius:6px;color:var(--gold);font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.qr-dl:active{background:var(--gold-dim)}
+textarea.finput{resize:vertical;min-height:96px;font-family:inherit;line-height:1.7}
+.fg{margin-bottom:22px}
+.flbl{display:block;font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.finput{
+  width:100%;background:var(--ink2);border:1px solid rgba(212,175,55,.2);
+  border-radius:7px;padding:15px 18px;color:var(--cream);
+  font-family:'Lato',sans-serif;font-size:16px;font-weight:500;
+  outline:none;-webkit-appearance:none;
+  transition:border-color .3s,box-shadow .3s;
+}
+.finput:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.08)}
+.finput::placeholder{color:rgba(247,243,236,.42)}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ropt{position:relative}
+.ropt input[type=radio]{position:absolute;opacity:0;width:0;height:0}
+.rlbl{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:15px 10px;border:1px solid rgba(212,175,55,.2);border-radius:7px;
+  cursor:pointer;font-size:15px;font-weight:600;letter-spacing:.5px;color:var(--cream);opacity:.8;
+  transition:all .3s var(--spring);user-select:none;
+}
+.ropt input:checked+.rlbl{border-color:var(--gold);background:rgba(212,175,55,.1);opacity:1;color:var(--gold)}
+.gctr{display:flex;align-items:center;background:var(--ink2);border:1px solid rgba(212,175,55,.2);border-radius:7px;overflow:hidden}
+.gc-btn{width:54px;height:52px;background:transparent;border:none;color:var(--gold);font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s var(--spring)}
+.gc-btn:active{background:rgba(212,175,55,.1);transform:scale(.82)}
+.gc-n{flex:1;text-align:center;font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--cream);transition:transform .25s var(--spring)}
+.gc-n.bump{transform:scale(1.35)}
+
+/* ── FOOTER ───────────────────────────────────────────── */
+#footer{background:var(--ink2);padding:62px 22px;text-align:center;border-top:1px solid rgba(212,175,55,.12)}
+.ft-orn{color:var(--gold);letter-spacing:12px;font-size:8px;margin-bottom:20px;opacity:.55}
+.ft-nms{font-family:'Great Vibes',cursive;font-size:54px;color:var(--gold);line-height:1.1}
+.ft-dt{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--cream);opacity:.8;margin-top:20px}
+.ft-note{font-size:14px;color:var(--cream);opacity:.6;margin-top:22px;letter-spacing:.5px;line-height:1.7}
+
+/* ── ENVELOPE ─────────────────────────────────────────── */
+#envelope-screen{position:fixed;inset:0;z-index:10000;overflow:hidden;cursor:pointer;opacity:0;background:#0A0908}
+#env-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:2;transform:scale(1.18)}
+#env-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:3;opacity:0;transform:scale(1.18)}
+#env-flash{position:fixed;inset:0;background:#fff;z-index:9999;opacity:0;pointer-events:none}
+.envelope-hint{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:rgba(212,175,55,.8);opacity:0;cursor:pointer;white-space:nowrap;z-index:10;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.envelope-hint::after{content:'';display:block;width:32px;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.5),transparent);margin:10px auto 0;animation:hintPulse 2.2s ease-in-out infinite}
+@keyframes hintPulse{0%,100%{opacity:.4;width:32px}50%{opacity:1;width:54px}}
+
+/* ── KIDS POLICY ──────────────────────────────────────── */
+#kids-policy{background:var(--ink2)}
+.kp-card{
+  background:var(--ink3);border:1px solid rgba(212,175,55,.16);
+  border-radius:12px;padding:34px 24px 28px;margin-top:26px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.kp-card::before{content:'';position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent)}
+.kp-icons{display:flex;justify-content:center;gap:28px;margin-bottom:22px;color:var(--gold);opacity:.8}
+.kp-icons svg{width:30px;height:30px}
+.kp-msg{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;line-height:1.75;color:var(--cream);opacity:.92;font-style:italic}
+.kp-note{font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);opacity:.85;margin-top:18px}
+
+/* ── GIFTS ────────────────────────────────────────────── */
+#gifts{background:var(--ink3)}
+.gf-sub{text-align:center;font-size:16px;color:var(--cream);opacity:.85;line-height:1.7;margin:14px 0 28px}
+.gf-card{
+  display:block;text-decoration:none;
+  background:var(--ink2);border:1px solid rgba(212,175,55,.16);
+  border-radius:10px;padding:22px 22px;margin-bottom:12px;
+  position:relative;overflow:hidden;
+  transition:transform .25s var(--spring),border-color .25s;
+}
+.gf-card::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(to right,transparent,rgba(212,175,55,.35),transparent)}
+.gf-card:active{transform:scale(.98);border-color:var(--gold)}
+.gf-card-top{display:flex;align-items:center;gap:14px}
+.gf-logo{
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(212,175,55,.1);color:var(--gold);flex-shrink:0;
+  border:1px solid rgba(212,175,55,.22);
+}
+.gf-logo svg{width:22px;height:22px}
+.gf-logo span{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold);font-weight:500;line-height:1}
+.gf-ttl{font-family:'Cormorant Garamond',serif;font-size:23px;color:var(--cream);font-weight:600}
+.gf-nt{font-size:15px;line-height:1.65;color:var(--cream);opacity:.85;margin:12px 0 0 58px}
+.gf-bank{padding:22px 22px 24px}
+.gf-bank-info{padding-left:58px;margin-top:14px}
+.gf-bk-line{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid rgba(212,175,55,.08);font-size:12px}
+.gf-bk-line:last-of-type{border-bottom:none}
+.gf-bk-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--cream);opacity:.45}
+.gf-bk-val{color:var(--cream);font-size:12px;text-align:right}
+.gf-bk-clabe-wrap{flex-direction:column;align-items:flex-start;gap:6px;padding-top:12px}
+.gf-bk-clabe{font-family:'Lato',monospace;color:var(--gold);font-size:15px;letter-spacing:2px;width:100%;text-align:left}
+.gf-copy{margin-top:12px;width:100%;font-size:10px;padding:13px 16px}
+
+/* ── ALBUM QR ─────────────────────────────────────────── */
+#album{background:var(--ink)}
+.alb-sub{text-align:center;font-size:16px;color:var(--cream);opacity:.85;line-height:1.7;margin:14px 0 28px}
+.alb-qr-wrap{text-align:center;margin-bottom:24px}
+.alb-qr-frame{
+  display:inline-block;padding:18px;background:var(--cream);
+  border-radius:14px;
+  box-shadow:
+    0 4px 18px rgba(0,0,0,.45),
+    0 12px 40px rgba(0,0,0,.35),
+    0 0 0 1px rgba(212,175,55,.3);
+}
+.alb-qr{width:260px;height:260px;display:block;border-radius:4px}
+.alb-scan{margin-top:16px;font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);opacity:.9}
+.alb-btn{max-width:310px;margin:0 auto;display:flex}
+.alb-hint{text-align:center;font-size:15px;color:var(--cream);opacity:.75;line-height:1.65;margin-top:22px}
+
+/* ── ELYSIUM CREDIT ───────────────────────────────────── */
+.el-sep{width:44px;height:1px;background:rgba(212,175,55,.18);margin:30px auto 16px}
+.el-credit{
+  display:inline-flex;align-items:center;gap:8px;
+  color:var(--cream);opacity:.62;
+  font-size:13px;letter-spacing:1.5px;text-decoration:none;
+  transition:opacity .25s;
+}
+.el-credit:hover{opacity:.85}
+.el-credit svg{opacity:.9}
+  </style>
+</head>
+<body>
+
+<!-- ENVELOPE SCREEN -->
+<div id="envelope-screen" role="button" aria-label="Toca para abrir tu invitación">
+  <img id="env-image" src="sobre.jpg" alt="Sobre invitación del bautizo de Jorge Esteban" />
+  <video id="env-video" src="sobre-apertura.mp4" playsinline webkit-playsinline muted preload="auto"></video>
+  <p class="envelope-hint" id="env-hint">Toca para abrir</p>
+</div>
+<div id="env-flash"></div>
+
+<div id="main-content" style="visibility:hidden">
+<!-- SCROLL PROGRESS -->
+<div id="prog"></div>
+
+<!-- AUDIO — reemplaza src con tu canción romántica -->
+<audio id="bgMusic" loop preload="none">
+  <source src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/audio/bautizo-jorge-esteban-ruiz/cancion.mp3" type="audio/mpeg">
+</audio>
+
+<!-- MUSIC BTN -->
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()" aria-label="Música">♪</button>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+
+<!-- ═══════════════ 1. HERO ════════════════ -->
+<section id="hero">
+  <!-- Background photo (parallax target) -->
+  <div class="h-bg" id="heroBg">
+    <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/hero.jpg"
+         alt="Jorge Esteban Ruiz" loading="eager" id="heroPic">
+  </div>
+  <div class="h-ov"></div>
+  <div class="h-frame"></div>
+  <div class="h-particles" id="hPart"></div>
+
+  <div class="h-cnt" id="hCnt">
+    <div class="h-clip"><span class="h-name foil" id="hN1">Jorge</span></div>
+    <div class="h-amp-clip"><span class="h-amp" id="hAmp">✦</span></div>
+    <div class="h-clip"><span class="h-name foil" id="hN2">Esteban</span></div>
+
+    <p class="h-we" id="hWe">Mi Bautizo</p>
+
+    <div class="gline" style="margin-top:18px" id="hLine"></div>
+
+    <div class="h-date-wrap" id="hDate">
+      <p class="h-date">27 · Noviembre · MMXXVI</p>
+      <p class="h-city">Mazatlán · Sinaloa</p>
+    </div>
+  </div>
+
+  <div class="h-scroll" id="hScroll">
+    <div class="h-scroll-line"></div>
+    <span>Desliza</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════ 2. CUENTA REGRESIVA ══════════ -->
+<section id="countdown">
+  <span class="lbl">Mi gran día llega en</span>
+  <h2 class="ttl">Cuenta Regresiva</h2>
+  <div class="gline"></div>
+  <div class="cd-grid">
+    <div class="cd-box"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">Días</span></div>
+    <div class="cd-box"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">Horas</span></div>
+    <div class="cd-box"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">Minutos</span></div>
+    <div class="cd-box"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">Segundos</span></div>
+  </div>
+</section>
+
+
+<!-- ═══════════════ 3. FAMILIA ══════════════ -->
+<section id="family">
+  <span class="lbl">Con amor</span>
+  <h2 class="ttl">Mis Padres y Padrinos</h2>
+  <div class="gline"></div>
+
+  <p class="fam-ttl">De la mano de quienes me cuidan,<br>doy mi primer paso en la fe.</p>
+
+  <div class="sdiv"></div>
+
+  <p class="fam-ttl">Mis Papás</p>
+  <div class="fam-card"><p class="fam-nms">Jorge E. Ruiz<br><span class="fam-sep">&amp;</span><br>Samantha Uriarte</p></div>
+
+  <div class="sdiv"></div>
+
+  <p class="fam-ttl">Mis Padrinos</p>
+  <div class="fam-card"><p class="fam-role">✦  Madrina</p><p class="fam-nms">Inés Moreno</p></div>
+  <div class="fam-card"><p class="fam-role">✦  Padrino</p><p class="fam-nms">Leonardo Uriarte</p></div>
+  <div class="fam-card"><p class="fam-role">✦  Madrina</p><p class="fam-nms">Paola Mata</p></div>
+</section>
+
+
+<!-- ═══════════════ 4. UBICACIONES ════════════ -->
+<section id="location">
+  <span class="lbl">¿Dónde y cuándo?</span>
+  <h2 class="ttl">La Celebración</h2>
+  <div class="gline"></div>
+
+  <div class="loc-card">
+    <p class="loc-type">✦  Ceremonia Religiosa</p>
+    <h3 class="loc-name">Parroquia María del Mar</h3>
+    <div class="loc-time" style="font-size:30px">Horario <em>por confirmar</em></div>
+    <p class="loc-addr">Carnaval, Playas del Sur<br>82040 Mazatlán, Sin.</p>
+    <a href="https://www.google.com/maps/place/Parroquia+Mar%C3%ADa+del+Mar/@23.1925493,-106.4204075,17z/data=!4m6!3m5!1s0x869f53ebb114c249:0xeb2247514686544f!8m2!3d23.1925493!4d-106.4204075"
+       target="_blank" rel="noopener" class="btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Ver en GPS / Google Maps
+    </a>
+  </div>
+
+  <div class="loc-card">
+    <p class="loc-type">✦  Recepción</p>
+    <h3 class="loc-name">LaFerro Salón Jardín</h3>
+    <div class="loc-time">7:00 <em>PM</em></div>
+    <p class="loc-addr">Flamingos 301, Palos Prietos<br>82010 Mazatlán, Sin.</p>
+    <a href="https://www.google.com/maps/place/LaFerro+Sal%C3%B3n+Jard%C3%ADn/@23.2168384,-106.4189978,17z/data=!4m6!3m5!1s0x1407af3f9bd34de9:0x39d6d0caaec85d47!8m2!3d23.2168384!4d-106.4189978"
+       target="_blank" rel="noopener" class="btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Ver en GPS / Google Maps
+    </a>
+  </div>
+
+  <div class="loc-card">
+    <p class="loc-type">✦  Hospedaje sugerido</p>
+    <h3 class="loc-name">Holiday Inn Express &amp; Suites Mazatlán</h3>
+    <p class="loc-addr" style="margin-top:14px">Av. del Mar 1223, Zona Costera<br>82017 Mazatlán, Sin.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Holiday+Inn+Express+%26+Suites+Mazatlan+Av+del+Mar+1223+Zona+Costera+82017+Mazatl%C3%A1n+Sin"
+       target="_blank" rel="noopener" class="btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Ver en Google Maps
+    </a>
+  </div>
+
+  <div class="loc-card">
+    <p class="loc-type">✦  Hospedaje sugerido</p>
+    <h3 class="loc-name">Varali Grand Hotel</h3>
+    <p class="loc-addr" style="margin-top:14px">Av. del Mar 2614, Tellería<br>82149 Mazatlán, Sin.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Varali+Grand+Hotel+Av+del+Mar+2614+Teller%C3%ADa+82149+Mazatl%C3%A1n+Sin"
+       target="_blank" rel="noopener" class="btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Ver en Google Maps
+    </a>
+  </div>
+</section>
+
+
+<!-- ═══════════════ 5. CALENDAR ══════════════ -->
+<section id="calendar">
+  <span class="lbl">No lo olvides</span>
+  <h2 class="ttl" style="font-size:28px">Guarda la Fecha</h2>
+  <div class="gline"></div>
+  <p class="cal-sub">Agrega mi bautizo a tu calendario<br>para no perderte ni un momento.</p>
+  <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Bautizo+de+Jorge+Esteban+Ruiz&dates=20261127T190000/20261128T020000&details=Ceremonia+religiosa+en+la+Parroquia+Mar%C3%ADa+del+Mar+(horario+por+confirmar).+Recepci%C3%B3n+7:00+PM+-+LaFerro+Sal%C3%B3n+Jard%C3%ADn.&location=Flamingos+301%2C+Palos+Prietos%2C+82010+Mazatl%C3%A1n%2C+Sin."
+     target="_blank" rel="noopener" id="calBtn"
+     class="btn btn-gold" style="max-width:310px;margin:0 auto;display:flex">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    Agregar a Google Calendar
+  </a>
+</section>
+
+
+<!-- ═══════════════ 6. ITINERARIO ════════════ -->
+<section id="itinerary">
+  <span class="lbl">Así será el día</span>
+  <h2 class="ttl">Itinerario</h2>
+  <div class="gline"></div>
+  <div class="timeline" id="tlWrap">
+    <div class="tl-track" id="tlTrack"></div>
+
+    <div class="tl-row"><div class="tl-t">Por<br>confirmar</div><div class="tl-dot"></div><div><p class="tl-ev">Ceremonia Religiosa</p><p class="tl-de">Parroquia María del Mar · Mazatlán</p></div></div>
+    <div class="tl-row"><div class="tl-t">7:00<br>PM</div><div class="tl-dot"></div><div><p class="tl-ev">Recepción</p><p class="tl-de">LaFerro Salón Jardín</p></div></div>
+    <div class="tl-row"><div class="tl-t">8:00<br>PM</div><div class="tl-dot"></div><div><p class="tl-ev">Cena</p><p class="tl-de">Servicio en mesa</p></div></div>
+  </div>
+</section>
+
+
+<!-- ═══════════════ 7. NIÑOS BIENVENIDOS ═════════ -->
+<section id="kids-policy">
+  <span class="lbl">Con todo nuestro cariño</span>
+  <h2 class="ttl">Niños Bienvenidos</h2>
+  <div class="gline"></div>
+  <div class="kp-card">
+    <div class="kp-icons">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-9a4 4 0 017-2.6A4 4 0 0119 12c0 4.5-7 9-7 9z"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l7-5 7 5"/><path d="M8 21h8"/></svg>
+    </div>
+    <p class="kp-msg">Este día es una fiesta en familia.<br>Los niños son más que bienvenidos<br>a celebrar conmigo.</p>
+    <p class="kp-note">Una celebración para todos · Los esperamos</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════ 8. LLUVIA DE SOBRES ══════════ -->
+<section id="gifts">
+  <span class="lbl">Tu presencia es mi mejor regalo</span>
+  <h2 class="ttl">Lluvia de Sobres</h2>
+  <div class="gline"></div>
+  <p class="gf-sub">Si deseas obsequiarme algo especial,<br>lo recibiremos con mucho cariño.</p>
+
+  <div class="gf-card">
+    <div class="gf-card-top">
+      <div class="gf-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+      <p class="gf-ttl">Lluvia de sobres</p>
+    </div>
+    <p class="gf-nt">Habrá un buzón en la recepción<br>para recibir tu sobre el día del evento.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════ 9. ÁLBUM COMPARTIDO ═══════════ -->
+<section id="album">
+  <span class="lbl">Captura cada momento</span>
+  <h2 class="ttl">Álbum Compartido</h2>
+  <div class="gline"></div>
+  <p class="alb-sub">Escanea el código QR y sube las fotos<br>que tomes durante el evento.</p>
+
+  <div class="alb-qr-wrap">
+    <div class="alb-qr-frame">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&color=0A0908&bgcolor=F7F3EC&data=https%3A%2F%2Fphotos.app.goo.gl%2Fbautizo-jorge-esteban-ruiz"
+           alt="QR álbum compartido del bautizo de Jorge Esteban" class="alb-qr" loading="lazy">
+    </div>
+    <p class="alb-scan">Escanea con la cámara</p>
+  </div>
+
+  <a href="https://photos.app.goo.gl/bautizo-jorge-esteban-ruiz" target="_blank" rel="noopener" class="btn alb-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    Abrir álbum
+  </a>
+
+  <p class="alb-hint">Compartirás tus fotos con los demás invitados.<br>Podrás ver el álbum completo después del evento.</p>
+</section>
+
+
+<!-- ═══════════════ 10. DRESS CODE ════════════ -->
+<section id="dresscode">
+  <span class="lbl">Vestimenta</span>
+  <h2 class="ttl">Código de Vestimenta</h2>
+  <div class="gline"></div>
+  <p class="dc-sub"><em style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600">Semi formal</em><br>Ayúdanos a crear un ambiente especial<br>con esta paleta de colores.</p>
+  <div class="palette" id="palette">
+    <div class="pal-item"><div class="pal-sw" style="background:#012c00"></div><p class="pal-nm">V. Bosque</p></div>
+    <div class="pal-item"><div class="pal-sw" style="background:#463400"></div><p class="pal-nm">Olivo</p></div>
+    <div class="pal-item"><div class="pal-sw" style="background:#3f1300"></div><p class="pal-nm">Chocolate</p></div>
+    <div class="pal-item"><div class="pal-sw" style="background:#bb4400"></div><p class="pal-nm">Terracota</p></div>
+    <div class="pal-item"><div class="pal-sw" style="background:#D4C5B2"></div><p class="pal-nm">Arena</p></div>
+    <div class="pal-item"><div class="pal-sw" style="background:#ffb0d2"></div><p class="pal-nm">Rosa</p></div>
+    <div class="pal-item"><div class="pal-sw" style="background:#000100"></div><p class="pal-nm">Negro</p></div>
+  </div>
+  <div class="dc-note" id="dcNote">
+    <strong>Un detalle:</strong>
+    Estos colores son solo una sugerencia · Lo importante es que vengas cómodo y nos acompañes.
+  </div>
+</section>
+
+
+<!-- ═══════════════ 11. GALERÍA ══════════════ -->
+<section id="gallery">
+  <span class="lbl">Mis primeros días</span>
+  <h2 class="ttl">Galería</h2>
+  <div class="gline"></div>
+  <div class="gal-grid" id="galGrid">
+    <div class="g-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/g1.jpg" alt="Jorge Esteban" loading="lazy"></div>
+    <div class="g-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/g2.jpg" alt="Jorge Esteban" loading="lazy"></div>
+    <div class="g-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/g3.jpg" alt="Jorge Esteban" loading="lazy"></div>
+    <div class="g-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/g4.jpg" alt="Jorge Esteban" loading="lazy"></div>
+    <div class="g-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/g5.jpg" alt="Jorge Esteban" loading="lazy"></div>
+  </div>
+</section>
+
+
+<!-- ═══════════════ 12. RSVP ═════════════════════════ -->
+<section id="rsvp">
+  <span class="lbl">Confirmación de asistencia</span>
+  <h2 class="ttl">¿Me acompañas?</h2>
+  <div class="gline"></div>
+  <p class="rsvp-sub">Confirma antes del<br><span class="rsvp-dl">1 de Noviembre de 2026</span></p>
+
+  <div id="rsvpGreeting"></div>
+
+  <form id="rsvpForm" onsubmit="submitRSVP(event)" novalidate>
+    <div class="fg" id="fg1">
+      <label class="flbl" for="rname">Nombre completo</label>
+      <input type="text" id="rname" class="finput" placeholder="Escribe tu nombre completo" autocomplete="name">
+    </div>
+    <div class="fg" id="fg2">
+      <label class="flbl">¿Asistirás?</label>
+      <div class="rgrid">
+        <div class="ropt">
+          <input type="radio" name="att" id="rYes" value="yes">
+          <label class="rlbl" for="rYes">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Asistiré
+          </label>
+        </div>
+        <div class="ropt">
+          <input type="radio" name="att" id="rNo" value="no">
+          <label class="rlbl" for="rNo">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            No podré
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="fg" id="fg3" style="display:none">
+      <label class="flbl">¿Quiénes asistirán?</label>
+      <div id="rsvp-fields"></div>
+    </div>
+    <div class="fg" id="fgMsg" style="display:none">
+      <label class="flbl" for="rmsg">Mensaje para la familia (opcional)</label>
+      <textarea id="rmsg" class="finput" rows="4" maxlength="500" placeholder="Déjanos unas palabras…"></textarea>
+    </div>
+    <div class="fg" id="fg4">
+      <button type="submit" class="btn btn-gold" id="rsvpConfirmBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <span id="rsvp-btn-text">Confirmar asistencia</span>
+      </button>
+      <p id="rsvpFeedback" class="rsvp-feedback" style="display:none"></p>
+    </div>
+  </form>
+
+  <!-- Códigos de acceso QR (aparecen al confirmar) -->
+  <div id="qrSection" style="display:none">
+    <div class="sdiv"></div>
+    <p class="fam-ttl">Tus códigos de acceso</p>
+    <p class="qr-hint">Presenta tu código QR el día del evento.<br>Puedes mostrarlo desde tu celular o descargarlo.</p>
+    <div class="qr-grid" id="qrGrid"></div>
+  </div>
+</section>
+
+
+<!-- ═══════════════ 13. FOOTER ══════════════ -->
+<footer id="footer">
+  <div class="ft-orn">✦ · ✦ · ✦</div>
+  <div class="ft-nms foil">Jorge Esteban</div>
+  <div class="gline" style="margin-top:22px"></div>
+  <p class="ft-dt">27 · Noviembre · MMXXVI</p>
+  <p class="ft-note">Mazatlán · Sinaloa · México<br>Con amor, la familia Ruiz Uriarte</p>
+
+  <div class="el-sep"></div>
+  <a href="https://www.instagram.com/elysium.invitaciones/" target="_blank" rel="noopener" class="el-credit">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    <span>Diseño por @elysium.invitaciones</span>
+  </a>
+</footer>
+</div><!-- /#main-content -->
+
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- QR codes (códigos de acceso) — 1.5.1 es la última versión con bundle UMD en el CDN -->
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+
+<script>
+/* ── BOOT ─────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  gsap.registerPlugin(ScrollTrigger);
+});
+
+/* ── ENVELOPE ANIMATION ──────────────────────────────── */
+(function () {
+  var envScreen = document.getElementById('envelope-screen');
+  var envImage  = document.getElementById('env-image');
+  var envVideo  = document.getElementById('env-video');
+  var envFlash  = document.getElementById('env-flash');
+  var hint      = document.getElementById('env-hint');
+  var opened    = false;
+
+  gsap.timeline()
+    .to(envScreen, { opacity: 1, duration: 1.2, ease: 'power2.out', delay: 0.3 })
+    .to(hint,      { opacity: 1, duration: 0.9, ease: 'power2.out' }, '-=0.5');
+
+  gsap.to(envImage, {
+    scale: 1.20, duration: 2.2, ease: 'sine.inOut',
+    repeat: -1, yoyo: true, delay: 1.5
+  });
+
+  var flashStarted = false, invitationReady = false;
+
+  function prepareInvitation() {
+    if (invitationReady) return;
+    invitationReady = true;
+    envScreen.style.display = 'none';
+    document.getElementById('main-content').style.visibility = 'visible';
+    heroAnim();
+    spawnParticles();
+    scrollAnims();
+    countdown();
+    setInterval(countdown, 1000);
+  }
+
+  function revealInvitation() {
+    prepareInvitation();
+    gsap.to(envFlash, {
+      opacity: 0, duration: 3, ease: 'power1.out',
+      onComplete: function () { envFlash.style.display = 'none'; }
+    });
+  }
+
+  envVideo.addEventListener('timeupdate', function () {
+    if (!flashStarted && envVideo.duration && envVideo.currentTime >= envVideo.duration - 5) {
+      flashStarted = true;
+      gsap.to(envFlash, { opacity: 1, duration: 4.5, ease: 'none', onComplete: revealInvitation });
+    }
+  });
+
+  envVideo.addEventListener('ended', function () {
+    if (!invitationReady) {
+      gsap.to(envFlash, { opacity: 1, duration: 1.5, ease: 'none', onComplete: revealInvitation });
+    }
+  });
+
+  function openEnvelope() {
+    if (opened) return;
+    opened = true;
+    primeAudio();
+    gsap.killTweensOf(envImage);
+    gsap.to(hint, { opacity: 0, duration: 0.2 });
+    var p = envVideo.play();
+    gsap.to(envImage, { opacity: 0, duration: 0.55, ease: 'power2.inOut', onComplete: function () { envImage.style.display = 'none'; } });
+    gsap.to(envVideo, { opacity: 1, duration: 0.55, ease: 'power2.inOut' });
+    if (p !== undefined) p.catch(function () { revealInvitation(); });
+  }
+
+  envScreen.addEventListener('click', openEnvelope);
+  envScreen.addEventListener('touchstart', function (e) {
+    e.preventDefault();
+    openEnvelope();
+  }, { passive: false });
+}());
+
+/* ── AUDIO: desbloqueo con el primer gesto (iOS) ─────── */
+function primeAudio() {
+  var a = document.getElementById('bgMusic');
+  if (!a || a.dataset.primed) return;
+  a.dataset.primed = '1';
+  a.muted = true;
+  var p = a.play();
+  if (p) p.then(function(){ a.pause(); a.currentTime = 0; a.muted = false; })
+          .catch(function(){ a.muted = false; });
+  else { a.pause(); a.muted = false; }
+}
+
+/* ── SCROLL PROGRESS ─────────────────────────────────── */
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  document.getElementById('prog').style.width =
+    (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+}, { passive: true });
+
+/* ── HERO ANIMATIONS ─────────────────────────────────── */
+function heroAnim() {
+  // Set initial states
+  gsap.set(['#hWe','#hDiv','#hLine','#hDate','#hScroll'], { opacity: 0 });
+  gsap.set(['#hN1','#hN2','#hAmp'], { yPercent: 110 });
+
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  tl
+    .to('#hWe',    { opacity: 1, duration: .7 }, .1)
+    .to('#hDiv',   { opacity: 1, duration: .5 }, .3)
+    .to('#hN1',    { yPercent: 0, duration: 1 }, .45)
+    .to('#hAmp',   { yPercent: 0, duration: .8 }, .7)
+    .to('#hN2',    { yPercent: 0, duration: 1  }, .82)
+    .to('#hLine',  { opacity: .7, duration: .6 }, 1.15)
+    .to('#hDate',  { opacity: 1, duration: .7  }, 1.28)
+    .to('#hScroll',{ opacity: 1, duration: .5  }, 1.7);
+
+  // Hero parallax
+  gsap.to('#heroBg', {
+    yPercent: 22, ease: 'none',
+    scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true }
+  });
+}
+
+/* ── PARTICLES ───────────────────────────────────────── */
+function spawnParticles() {
+  const c = document.getElementById('hPart');
+  for (let i = 0; i < 22; i++) {
+    const p = document.createElement('div');
+    const sz = Math.random() * 2.8 + .6;
+    Object.assign(p.style, {
+      position: 'absolute', width: sz + 'px', height: sz + 'px',
+      background: '#D4AF37', borderRadius: '50%',
+      left: Math.random() * 100 + '%', bottom: '-8px',
+      opacity: '0', willChange: 'transform,opacity'
+    });
+    c.appendChild(p);
+    gsap.to(p, {
+      y: -(window.innerHeight * (.5 + Math.random() * .8)),
+      opacity: Math.random() * .55 + .08,
+      duration: 4 + Math.random() * 5,
+      delay: Math.random() * 4,
+      ease: 'none', repeat: -1,
+      onRepeat() {
+        gsap.set(p, { left: Math.random() * 100 + '%', bottom: '-8px', opacity: 0 });
+      }
+    });
+  }
+}
+
+/* ── SCROLL ANIMATIONS ───────────────────────────────── */
+function scrollAnims() {
+  const ease = 'power3.out';
+
+  // Generic section titles
+  document.querySelectorAll('section').forEach(sec => {
+    const els = sec.querySelectorAll('.lbl,.ttl,.gline');
+    if (els.length) {
+      gsap.from(els, {
+        opacity: 0, y: 22, duration: .7, stagger: .1, ease,
+        scrollTrigger: { trigger: sec, start: 'top 88%', once: true }
+      });
+    }
+  });
+
+  // Countdown boxes
+  gsap.from('.cd-box', {
+    opacity: 0, y: 28, scale: .88, duration: .65, stagger: .09,
+    ease: 'back.out(1.5)',
+    scrollTrigger: { trigger: '#countdown', start: 'top 85%', once: true }
+  });
+
+  // Location cards
+  gsap.from('.loc-card', {
+    opacity: 0, y: 36, duration: .75, stagger: .14, ease,
+    scrollTrigger: { trigger: '#location', start: 'top 78%', once: true }
+  });
+
+  // Calendar button
+  gsap.from(['#calendar .cal-sub', '#calBtn'], {
+    opacity: 0, y: 18, scale: .96, duration: .65, stagger: .14,
+    ease: 'back.out(1.3)',
+    scrollTrigger: { trigger: '#calendar', start: 'top 84%', once: true }
+  });
+
+  // Timeline — line draws, rows fade in
+  ScrollTrigger.create({
+    trigger: '#itinerary', start: 'top 72%', once: true,
+    onEnter() {
+      const wrap = document.getElementById('tlWrap');
+      gsap.to('#tlTrack', { height: wrap.offsetHeight - 16, duration: 2.6, ease: 'power1.inOut' });
+      gsap.from('.tl-row', { opacity: 0, x: -18, duration: .55, stagger: .13, ease, delay: .15 });
+      document.querySelectorAll('.tl-dot').forEach((d, i) => {
+        setTimeout(() => d.classList.add('on'), (300 + i * 130));
+      });
+    }
+  });
+
+  // Dress code
+  gsap.from('.dc-sub', {
+    opacity: 0, y: 18, duration: .65, ease,
+    scrollTrigger: { trigger: '#dresscode', start: 'top 82%', once: true }
+  });
+  gsap.set('.pal-sw', { scale: 0 });
+  ScrollTrigger.create({
+    trigger: '#palette', start: 'top 86%', once: true,
+    onEnter() {
+      gsap.to('.pal-sw', { scale: 1, duration: .55, stagger: .09, ease: 'back.out(2.2)' });
+      gsap.from('#dcNote', { opacity: 0, x: -18, duration: .65, delay: .45, ease });
+    }
+  });
+
+  // Family
+  gsap.from('.fam-ttl', {
+    opacity: 0, y: 18, duration: .6, stagger: .2, ease,
+    scrollTrigger: { trigger: '#family', start: 'top 78%', once: true }
+  });
+  gsap.from('.fam-card', {
+    opacity: 0, y: 20, duration: .55, stagger: .08, ease,
+    scrollTrigger: { trigger: '#family', start: 'top 78%', once: true }
+  });
+
+  // Kids policy
+  gsap.from('.kp-card', {
+    opacity: 0, y: 24, duration: .7, ease,
+    scrollTrigger: { trigger: '#kids-policy', start: 'top 82%', once: true }
+  });
+
+  // Gifts
+  gsap.from('.gf-card', {
+    opacity: 0, y: 22, duration: .6, stagger: .11, ease,
+    scrollTrigger: { trigger: '#gifts', start: 'top 80%', once: true }
+  });
+
+  // Album
+  gsap.from('.alb-qr-frame', {
+    opacity: 0, scale: .86, duration: .75, ease: 'back.out(1.4)',
+    scrollTrigger: { trigger: '#album', start: 'top 80%', once: true }
+  });
+  gsap.from(['.alb-sub','.alb-scan','.alb-btn','.alb-hint'], {
+    opacity: 0, y: 18, duration: .6, stagger: .1, ease,
+    scrollTrigger: { trigger: '#album', start: 'top 80%', once: true }
+  });
+
+  // Gallery
+  gsap.from('.g-item', {
+    opacity: 0, scale: .9, duration: .65, stagger: .1,
+    ease: 'power3.out',
+    scrollTrigger: { trigger: '#gallery', start: 'top 82%', once: true }
+  });
+
+  // RSVP form fields
+  gsap.from(['#fg1','#fg2','#fg4'], {
+    opacity: 0, y: 18, duration: .55, stagger: .12, ease,
+    scrollTrigger: { trigger: '#rsvp', start: 'top 80%', once: true }
+  });
+
+  // Footer
+  gsap.from('#footer > *', {
+    opacity: 0, y: 20, duration: .6, stagger: .1, ease,
+    scrollTrigger: { trigger: '#footer', start: 'top 90%', once: true }
+  });
+}
+
+/* ── COUNTDOWN ───────────────────────────────────────── */
+const WED = new Date('2026-11-27T19:00:00');
+let prevS = '';
+function pad(n) { return String(n).padStart(2,'0'); }
+
+function countdown() {
+  const d = WED - Date.now();
+  if (d <= 0) return;
+  const days = Math.floor(d / 86400000);
+  const hrs  = Math.floor((d % 86400000) / 3600000);
+  const mins = Math.floor((d % 3600000)  / 60000);
+  const secs = Math.floor((d % 60000)    / 1000);
+
+  document.getElementById('cd-d').textContent = pad(days);
+  document.getElementById('cd-h').textContent = pad(hrs);
+  document.getElementById('cd-m').textContent = pad(mins);
+
+  const sEl = document.getElementById('cd-s');
+  const ns  = pad(secs);
+  if (ns !== prevS) {
+    gsap.fromTo(sEl, { y: -10, opacity: .2 }, { y: 0, opacity: 1, duration: .28, ease: 'power2.out' });
+    sEl.textContent = ns;
+    prevS = ns;
+  }
+}
+
+/* ── MUSIC ───────────────────────────────────────────── */
+const aud = document.getElementById('bgMusic');
+const mBtn = document.getElementById('musicBtn');
+let playing = false;
+
+function toggleMusic() {
+  if (playing) { aud.pause(); mBtn.innerHTML='♪'; mBtn.classList.remove('on'); }
+  else { aud.play().catch(()=>{}); mBtn.innerHTML='♬'; mBtn.classList.add('on'); }
+  playing = !playing;
+}
+
+/* ── RSVP · INTEGRACIÓN PANEL QR (patrón estándar) ───── */
+const PANEL_API = 'https://panel-invitados-qr.vercel.app/api/confirmar';
+const RSVP_URL  = 'https://bautizo-jorge-esteban-ruiz.vercel.app';
+const RSVP_DEADLINE = new Date(2026, 10, 1, 23, 59, 59, 999); // 1 nov 2026 (fallback)
+let rsvpDeadline = RSVP_DEADLINE;              // fecha límite efectiva (la del panel la sobrescribe)
+let rsvpActiveLabel = 'Confirmar asistencia';  // texto del botón cuando el form está abierto
+let invitacionAnulada = false;                 // true si el organizador borró esta invitación en el panel
+
+const rsvpParams = new URLSearchParams(location.search);
+const urlPara  = (rsvpParams.get('para') || '').trim();
+const rawPases = parseInt(rsvpParams.get('pases') || '1', 10);
+let pasesAsignados = (isNaN(rawPases) || rawPases < 1 || rawPases > 20) ? 1 : rawPases;
+let savedNames = [];
+let rsvpChoice = null;
+
+function escHtml(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+function setBtnText(t) { const el = document.getElementById('rsvp-btn-text'); if (el) el.textContent = t; }
+function showFeedback(msg, color) {
+  const f = document.getElementById('rsvpFeedback');
+  if (!f) return;
+  f.style.display = 'block';
+  f.style.color = color || 'var(--gold)';
+  f.textContent = msg;
+}
+
+/* Fecha límite: formato es-MX largo y parseo tolerante (fin de día local) */
+function fmtDeadline(d) {
+  return d.toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+function parseDeadline(str) {
+  if (!str) return null;
+  // Solo fecha (sin hora) → fin de día LOCAL. Un ISO completo con zona
+  // horaria se parsea tal cual (recortarlo movería el límite un día).
+  const m = String(str).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (m) return new Date(+m[1], +m[2] - 1, +m[3], 23, 59, 59, 999);
+  const d = new Date(str);
+  return isNaN(d.getTime()) ? null : d;
+}
+function freezeRsvp() {
+  document.querySelectorAll('#rsvpForm input, #rsvpForm button').forEach(el => el.disabled = true);
+  setBtnText('Fecha límite alcanzada');
+}
+/* Congela o reabre el form según la fecha límite efectiva */
+function applyRsvpDeadline() {
+  if (invitacionAnulada) return; // invitación borrada: permanece bloqueada
+  if (Date.now() > rsvpDeadline.getTime()) {
+    freezeRsvp();
+  } else {
+    document.querySelectorAll('#rsvpForm input, #rsvpForm button').forEach(el => el.disabled = false);
+    setBtnText(rsvpActiveLabel);
+  }
+}
+/* La invitación fue borrada del panel: se desactiva de forma definitiva */
+function invitacionNoDisponible() {
+  invitacionAnulada = true;
+  document.querySelectorAll('#rsvpForm input, #rsvpForm button').forEach(el => el.disabled = true);
+  setBtnText('Invitación no disponible');
+  showFeedback('Esta invitación ya no está disponible. Por favor contacta a la familia.', '#e8a090');
+  const sec = document.getElementById('qrSection');
+  if (sec) sec.style.display = 'none';
+}
+/* Confirmado pero aún sin QRs: mensaje dentro del contenedor de códigos */
+function showQrsPending() {
+  const sec = document.getElementById('qrSection');
+  const grid = document.getElementById('qrGrid');
+  if (!sec || !grid) return;
+  grid.innerHTML = '';
+  const msg = document.createElement('p');
+  msg.className = 'qr-hint';
+  msg.textContent = 'Tus códigos de acceso estarán disponibles cuando se acerque el evento. Vuelve a esta página más adelante.';
+  grid.appendChild(msg);
+  sec.style.display = 'block';
+}
+
+function paintGreeting() {
+  const g = document.getElementById('rsvpGreeting');
+  if (!g || !urlPara) return;
+  g.innerHTML =
+    '<p class="rsvp-greeting">¡Hola, ' + escHtml(urlPara) + '!</p>' +
+    '<p class="rsvp-passes">Tienes <strong style="color:var(--gold)">' + pasesAsignados + '</strong> pase' + (pasesAsignados > 1 ? 's' : '') + ' asignado' + (pasesAsignados > 1 ? 's' : '') + '</p>';
+}
+
+function renderFields(n) {
+  const f = document.getElementById('rsvp-fields');
+  f.innerHTML = '';
+  for (let i = 0; i < n; i++) {
+    const inp = document.createElement('input');
+    inp.type = 'text';
+    inp.className = 'finput';
+    inp.placeholder = n === 1 ? 'Tu nombre completo' : 'Invitado ' + (i + 1);
+    inp.autocomplete = 'off';
+    inp.maxLength = 60;
+    inp.value = savedNames[i] || '';
+    ((idx) => inp.addEventListener('input', function(){ savedNames[idx] = this.value; }))(i);
+    f.appendChild(inp);
+  }
+}
+
+function selectRsvp(choice, animate) {
+  rsvpChoice = choice;
+  const radio = document.getElementById(choice === 'yes' ? 'rYes' : 'rNo');
+  if (radio) radio.checked = true;
+  const g = document.getElementById('fg3');
+  const m = document.getElementById('fgMsg');
+  if (choice === 'yes') {
+    renderFields(pasesAsignados);
+    g.style.display = 'block';
+    if (m) m.style.display = 'none';
+    if (animate && window.gsap) gsap.from(g, { opacity: 0, y: 10, duration: .35, ease: 'power2.out' });
+  } else {
+    g.style.display = 'none';
+    if (m) {
+      m.style.display = 'block';
+      if (animate && window.gsap) gsap.from(m, { opacity: 0, y: 10, duration: .35, ease: 'power2.out' });
+    }
+  }
+}
+
+document.querySelectorAll('input[name="att"]').forEach(r => {
+  r.addEventListener('change', e => selectRsvp(e.target.value === 'yes' ? 'yes' : 'no', true));
+});
+
+/* Pre-fill: d.pases del panel es autoritativo; guard silencioso si no hay registro */
+(function initRsvpPanel() {
+  if (urlPara) {
+    const fg1 = document.getElementById('fg1');
+    if (fg1) fg1.style.display = 'none'; // el nombre viene del link personalizado
+    paintGreeting();
+    fetch(PANEL_API + '?nombre=' + encodeURIComponent(urlPara) + '&url_boda=' + encodeURIComponent(RSVP_URL))
+      .then(r => r.json())
+      .then(resp => {
+        const d = resp && resp.invitado;
+        if (!d) {
+          // El server respondió pero esta invitación no existe (borrada del panel)
+          if (resp && resp.ok) invitacionNoDisponible();
+          return;
+        }
+        if (typeof d.pases === 'number' && d.pases > 0 && d.pases <= 20) {
+          pasesAsignados = d.pases;
+          paintGreeting();
+        }
+        if (d.estado === 'confirmado' || d.estado === 'declino') {
+          if (d.nombres_confirmados && d.nombres_confirmados.length) {
+            savedNames = d.nombres_confirmados.slice();
+          }
+          if (d.estado === 'declino' && d.mensaje) {
+            const rmsg = document.getElementById('rmsg');
+            if (rmsg) rmsg.value = d.mensaje;
+          }
+          selectRsvp(d.estado === 'confirmado' ? 'yes' : 'no', false);
+          rsvpActiveLabel = 'Actualizar respuesta';
+          applyRsvpDeadline();
+          showFeedback(d.estado === 'confirmado'
+            ? '¡Ya tienes confirmada tu asistencia! Puedes actualizar tu respuesta.'
+            : 'Ya registramos que no podrás asistir. Puedes cambiar tu respuesta.');
+          if (d.estado === 'confirmado') {
+            if (resp.qrs && resp.qrs.length) paintQrs(resp.qrs);
+            else showQrsPending();
+          }
+        }
+      })
+      .catch(() => {});
+  }
+
+  applyRsvpDeadline();
+
+  /* Fecha límite dinámica del panel: sobrescribe el fallback hardcodeado */
+  fetch(PANEL_API + '?solo_boda=1&url_boda=' + encodeURIComponent(RSVP_URL))
+    .then(r => r.json())
+    .then(resp => {
+      const b = resp && resp.boda;
+      if (!b || !b.fecha_limite_rsvp) return;
+      const nd = parseDeadline(b.fecha_limite_rsvp);
+      if (!nd) return;
+      rsvpDeadline = nd;
+      const dl = document.querySelector('.rsvp-dl');
+      if (dl) dl.textContent = fmtDeadline(nd);
+      applyRsvpDeadline();
+    })
+    .catch(() => {});
+})();
+
+function submitRSVP(e) {
+  e.preventDefault();
+  if (Date.now() > rsvpDeadline.getTime()) return;
+  const rname  = document.getElementById('rname');
+  const nombre = urlPara || (rname ? rname.value.trim() : '');
+
+  if (!nombre) { toast('Escribe tu nombre'); return; }
+  if (!rsvpChoice) { toast('Indica si asistirás'); return; }
+
+  const nombres = [];
+  if (rsvpChoice === 'yes') {
+    document.querySelectorAll('#rsvp-fields .finput').forEach(inp => {
+      const v = inp.value.trim();
+      if (v) nombres.push(v);
+    });
+    if (nombres.length === 0) { toast('Escribe al menos un nombre'); return; }
+  }
+
+  const btn = document.getElementById('rsvpConfirmBtn');
+  setBtnText('Enviando…');
+  btn.disabled = true;
+
+  fetch(PANEL_API, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      nombre: nombre,
+      url_boda: RSVP_URL,
+      estado: rsvpChoice === 'yes' ? 'confirmado' : 'declino',
+      pases: pasesAsignados,
+      pases_confirmados: rsvpChoice === 'yes' ? nombres.length : 0,
+      nombres_confirmados: nombres,
+      mensaje: rsvpChoice === 'no'
+        ? ((document.getElementById('rmsg') || {}).value || '').trim().slice(0, 500)
+        : undefined
+    })
+  })
+  .then(r => r.json().then(d => ({ status: r.status, d: d })))
+  .then(res => {
+    const d = res.d;
+    btn.disabled = false;
+    if (res.status === 403 && d && d.error === 'rsvp_cerrado') {
+      showFeedback('La fecha para confirmar asistencia ha pasado.');
+      freezeRsvp();
+      return;
+    }
+    if (res.status === 404 && d && (d.error === 'invitacion_no_disponible' || d.error === 'no_match')) {
+      invitacionNoDisponible();
+      return;
+    }
+    if (!d || !d.ok) {
+      setBtnText('Confirmar asistencia');
+      toast('No pudimos guardar. Intenta de nuevo.');
+      return;
+    }
+    rsvpActiveLabel = 'Actualizar respuesta';
+    setBtnText('Actualizar respuesta');
+    if (rsvpChoice === 'yes') {
+      showFeedback('¡Tu asistencia ha sido confirmada! Nos vemos pronto. ✦', '#8fd88a');
+      toast('Asistencia confirmada');
+      if (d.qrs && d.qrs.length) paintQrs(d.qrs);
+      else showQrsPending();
+      setTimeout(() => document.getElementById('qrSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 350);
+    } else {
+      showFeedback('Hemos registrado que no podrás asistir. ¡Gracias por avisarnos!');
+      document.getElementById('qrSection').style.display = 'none';
+      toast('Respuesta registrada');
+    }
+  })
+  .catch(() => {
+    btn.disabled = false;
+    setBtnText('Confirmar asistencia');
+    toast('Error de conexión. Intenta de nuevo.');
+  });
+}
+
+/* ── QRs "Tus códigos de acceso" ─────────────────────── */
+function paintQrs(qrs) {
+  const sec = document.getElementById('qrSection');
+  const grid = document.getElementById('qrGrid');
+  if (!sec || !grid || typeof QRCode === 'undefined') return;
+  grid.innerHTML = '';
+  qrs.forEach(q => {
+    const card = document.createElement('div');
+    card.className = 'qr-card';
+
+    const box = document.createElement('div');
+    box.className = 'qr-img';
+    const cv = document.createElement('canvas');
+    box.appendChild(cv);
+    card.appendChild(box);
+    QRCode.toCanvas(cv, q.codigo, { width: 170, margin: 1, color: { dark: '#0A0908', light: '#FFFFFF' } }, function(){});
+
+    const nm = document.createElement('p');
+    nm.className = 'qr-name';
+    nm.textContent = q.nombre_persona;
+    card.appendChild(nm);
+
+    if (q.mesa) {
+      const ms = document.createElement('p');
+      ms.className = 'qr-mesa';
+      ms.textContent = 'Mesa ' + q.mesa;
+      card.appendChild(ms);
+    }
+
+    // Código en texto: respaldo por si el scanner falla en la entrada
+    // (se puede dictar y capturar manualmente en el panel)
+    const lbl = document.createElement('p');
+    lbl.className = 'qr-code-lbl';
+    lbl.textContent = 'Código de respaldo';
+    card.appendChild(lbl);
+    const ct = document.createElement('p');
+    ct.className = 'qr-code-txt';
+    ct.textContent = q.codigo;
+    card.appendChild(ct);
+
+    const dl = document.createElement('button');
+    dl.type = 'button';
+    dl.className = 'qr-dl';
+    dl.textContent = 'Descargar';
+    dl.addEventListener('click', function(){
+      QRCode.toDataURL(q.codigo, { width: 1024, margin: 2, color: { dark: '#0A0908', light: '#FFFFFF' } }, function(err, url){
+        if (err) return;
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'qr-' + q.nombre_persona.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '.png';
+        a.click();
+      });
+    });
+    card.appendChild(dl);
+
+    grid.appendChild(card);
+  });
+  sec.style.display = 'block';
+}
+
+/* ── COPY CLABE ──────────────────────────────────────── */
+function copyClabe() {
+  const raw = document.getElementById('clabeNum').textContent.replace(/\s+/g,'');
+  navigator.clipboard.writeText(raw).then(
+    () => toast('CLABE copiada'),
+    () => toast('No se pudo copiar')
+  );
+}
+
+/* ── TOAST ───────────────────────────────────────────── */
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+</body>
+</html>
