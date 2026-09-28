@@ -3,3 +3,5 @@
 Thumbs.db
 fotos/
 out/
+
+.env*
