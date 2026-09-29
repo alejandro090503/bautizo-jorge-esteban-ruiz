@@ -783,6 +783,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 @keyframes mbEq{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
 @keyframes mbHalo{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(1.7)}}
 @media (prefers-reduced-motion:reduce){.music-btn::before,.mb-eq i,.music-btn.on .mb-halo{animation:none!important}}
+@media (max-width:430px){.hd-y{display:block;margin-top:4px}.hd-dot{display:none}}
   </style>
 </head>
 <body>
@@ -834,7 +835,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
     <p class="h-we" id="hWe">Mi Bautizo</p>
     <div class="gline" style="margin-top:18px" id="hLine"></div>
     <div class="h-date-wrap" id="hDate">
-      <p class="h-date">27 · Noviembre · MMXXVI</p>
+      <p class="h-date">27 · Noviembre<span class="hd-y"><span class="hd-dot"> · </span>MMXXVI</span></p>
       <p class="h-city">Mazatlán · Sinaloa</p>
     </div>
   </div>
