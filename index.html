@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#0A0908">
+  <meta name="theme-color" content="#FBF8F1">
   <title>Jorge Esteban Ruiz · Mi Bautizo · 27 · XI · MMXXVI</title>
   <meta name="description" content="Bautizo de Jorge Esteban Ruiz — viernes 27 de noviembre de 2026, Mazatlán, Sinaloa.">
   <meta property="og:type" content="website">
@@ -14,7 +14,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
   <style>
 /* ── TOKENS ───────────────────────────────────────────── */
 :root {
@@ -396,11 +397,11 @@ textarea.finput{resize:vertical;min-height:96px;font-family:inherit;line-height:
 .ft-note{font-size:14px;color:var(--cream);opacity:.6;margin-top:22px;letter-spacing:.5px;line-height:1.7}
 
 /* ── ENVELOPE ─────────────────────────────────────────── */
-#envelope-screen{position:fixed;inset:0;z-index:10000;overflow:hidden;cursor:pointer;opacity:0;background:#0A0908}
+#envelope-screen{position:fixed;inset:0;z-index:10000;overflow:hidden;cursor:pointer;opacity:0;background:#E9DCC9}
 #env-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:2;transform:scale(1.18)}
 #env-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:3;opacity:0;transform:scale(1.18)}
 #env-flash{position:fixed;inset:0;background:#fff;z-index:9999;opacity:0;pointer-events:none}
-.envelope-hint{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:rgba(212,175,55,.8);opacity:0;cursor:pointer;white-space:nowrap;z-index:10;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.envelope-hint{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#4f5200;opacity:0;cursor:pointer;white-space:nowrap;z-index:10;text-shadow:0 1px 6px rgba(255,255,255,.7)}
 .envelope-hint::after{content:'';display:block;width:32px;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.5),transparent);margin:10px auto 0;animation:hintPulse 2.2s ease-in-out infinite}
 @keyframes hintPulse{0%,100%{opacity:.4;width:32px}50%{opacity:1;width:54px}}
 
@@ -477,6 +478,238 @@ textarea.finput{resize:vertical;min-height:96px;font-family:inherit;line-height:
 }
 .el-credit:hover{opacity:.85}
 .el-credit svg{opacity:.9}
+
+/* ════════════════ TEMA CLARO · BAUTIZO (override) ════════════════ */
+:root{
+  --paper:#FBF8F1; --champ:#F7E7CE; --sand:#D4C5B2; --olive:#8a8e00; --olive-dk:#5b5e00;
+  --night:#1b1d12; --text:#2A2D1E; --text2:#4B4E3C; --silver:#8E9091;
+  /* la base usa --ink como fondo y --cream como texto: se invierten */
+  --ink:#FBF8F1; --ink2:#FFFFFF; --ink3:#F7F1E6; --cream:#2A2D1E;
+  --gold:#B08A22; --gold-lt:#E9CF7A; --gold-dim:rgba(176,138,34,.16);
+  --gold-shine:linear-gradient(100deg,#8C6A12 0%,#B8912A 20%,#E3C66E 36%,#FFF4CC 50%,#E3C66E 64%,#B8912A 80%,#8C6A12 100%);
+  --gold-shine-dk:linear-gradient(100deg,#5E4608 0%,#7E5F12 22%,#A07D1C 40%,#C9A54A 50%,#A07D1C 60%,#7E5F12 78%,#5E4608 100%);
+  --fade:150px;
+}
+body{background:var(--paper);color:var(--text);font-weight:500}
+section{position:relative;isolation:isolate;overflow:hidden}
+section:not(.dark){background:transparent!important;border:none!important}
+#hero{overflow:hidden}
+
+/* ── Texto dorado metálico con brillo suave ── */
+.gold,.lbl,.ttl,.loc-time,.cd-num,.tl-time,.hc-name,.fam-name,.ft-nms{
+  background:var(--gold-shine);background-size:250% auto;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  animation:goldShine 7s linear infinite;
+}
+.gold,.lbl,.ttl,.loc-time,.cd-num,.tl-time,.hc-name,.fam-name,.env-title{background-image:var(--gold-shine-dk)}
+.ttl{background-image:var(--gold-shine-dk);padding:0 .1em .08em}
+@keyframes goldShine{0%{background-position:0% center}100%{background-position:250% center}}
+@media (prefers-reduced-motion:reduce){.gold,.lbl,.ttl,.loc-time,.cd-num,.tl-time,.hc-name,.fam-name,.ft-nms,.bgx::after{animation:none!important}}
+.lbl,.flbl,.loc-type,.fam-role,.cd-lbl,.pal-nm,.h-we,.h-city,.btn,.kp-note,.alb-scan{font-family:'Cormorant Garamond',serif!important}
+.lbl{font-size:14px;font-weight:700;letter-spacing:4px}
+.gline{background:linear-gradient(to right,transparent,#C9A64A,transparent)}
+
+/* ── Capas de fondo: imagen enmascarada + resplandor que se mueve ── */
+.bgx::before,.bgx::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 var(--fade),#000 calc(100% - var(--fade)),transparent 100%);
+          mask-image:linear-gradient(to bottom,transparent 0,#000 var(--fade),#000 calc(100% - var(--fade)),transparent 100%)}
+.bgx::before{background:var(--bgimg) center/cover no-repeat;opacity:var(--bgo,.7)}
+.bgx::after{
+  background:
+    radial-gradient(60% 45% at 20% 25%,rgba(247,231,206,.85),transparent 70%),
+    radial-gradient(55% 40% at 85% 70%,rgba(138,142,0,.10),transparent 70%),
+    radial-gradient(50% 40% at 50% 100%,rgba(212,175,55,.14),transparent 70%);
+  background-size:180% 180%;opacity:.9;
+  animation:glowDrift 22s ease-in-out infinite alternate;
+}
+.bgx.plain::before{display:none}
+@keyframes glowDrift{0%{background-position:0% 0%}50%{background-position:100% 40%}100%{background-position:30% 100%}}
+.dark{background:linear-gradient(to bottom,var(--paper) 0,#F1EDE2 60px,#D6D3C4 120px,#9C9B88 180px,#555742 240px,#2c2e1f 300px,var(--night) 350px,var(--night) calc(100% - 350px),#2c2e1f calc(100% - 300px),#555742 calc(100% - 240px),#9C9B88 calc(100% - 180px),#D6D3C4 calc(100% - 120px),#F1EDE2 calc(100% - 60px),var(--paper) 100%)!important;
+  --cream:#F7F3EC;color:#F7F3EC}
+.dark.bgx::before{-webkit-mask-image:linear-gradient(to bottom,transparent 0,transparent 220px,#000 380px,#000 calc(100% - 380px),transparent calc(100% - 220px));
+          mask-image:linear-gradient(to bottom,transparent 0,transparent 220px,#000 380px,#000 calc(100% - 380px),transparent calc(100% - 220px))}
+.dark.bgx::after{background:radial-gradient(55% 35% at 50% 50%,rgba(212,175,55,.12),transparent 70%);background-size:160% 160%}
+.dark .lbl,.dark .ttl,.dark .gold{background-image:var(--gold-shine)}
+#footer.bgx::before{-webkit-mask-image:linear-gradient(to bottom,transparent 0,transparent 220px,#000 380px);mask-image:linear-gradient(to bottom,transparent 0,transparent 220px,#000 380px)}
+#footer.dark{background:linear-gradient(to bottom,var(--paper) 0,#F1EDE2 60px,#D6D3C4 120px,#9C9B88 180px,#555742 240px,#2c2e1f 300px,var(--night) 350px,var(--night) 100%)!important}
+
+/* ── Reveal seguro (clase, sin dejar nada invisible) ── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ── HERO ── */
+.h-ov{background:linear-gradient(to bottom,rgba(20,22,12,.58) 0%,rgba(20,22,12,.22) 36%,rgba(20,22,12,.30) 62%,rgba(20,22,12,.55) 84%,rgba(251,248,241,.0) 90%,var(--paper) 100%)}
+.h-frame{border-color:rgba(247,231,206,.45)}
+.h-bg img{filter:brightness(.8) saturate(1.02)}
+.h-clip{overflow:hidden;line-height:1.28;padding:.06em .42em .2em}
+.h-amp-clip{overflow:hidden;line-height:1.2;margin:-4px 0;padding:0 .3em}
+.h-name{font-size:72px;text-shadow:none}
+.h-name.gold{background-image:linear-gradient(100deg,#C79A2E 0%,#E7C873 22%,#FFF6D5 40%,#F2DB94 55%,#C79A2E 78%,#E7C873 100%)}
+.h-amp{color:#F2DB94;font-size:26px}
+.h-we{color:#FFF6E0;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.h-date{color:#FFF6E0;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.h-city{color:#FFF6E0;opacity:.95}
+.h-scroll{bottom:46px}
+.h-scroll span{color:var(--olive-dk);opacity:1}
+.h-scroll-line{background:linear-gradient(to bottom,var(--olive),transparent)}
+#hero .gline{background:linear-gradient(to right,transparent,#F2DB94,transparent)}
+
+/* ── COUNTDOWN ── */
+#countdown{border:none;padding:78px 22px}
+.cd-box{background:rgba(255,255,255,.78);border:1px solid rgba(176,138,34,.35);border-radius:18px;
+  box-shadow:0 10px 28px rgba(90,94,0,.10);backdrop-filter:none;-webkit-backdrop-filter:none}
+.cd-lbl{color:var(--text2);opacity:1}
+.cd-sub{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;font-weight:600;color:var(--text2);margin-top:26px;line-height:1.5}
+
+/* ── FAMILIA · padrinos que aparecen uno a uno ── */
+.fam-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:23px;line-height:1.5;text-align:center;color:var(--text);max-width:320px;margin:6px auto 0}
+.fam-block{margin:34px auto 0;max-width:330px;text-align:center;background:rgba(255,255,255,.8);border:1px solid rgba(176,138,34,.32);
+  border-radius:24px;padding:26px 20px;box-shadow:0 14px 34px rgba(90,94,0,.08)}
+.fam-ic{font-size:30px;color:var(--olive);display:block;margin-bottom:6px}
+.fam-role{color:var(--olive-dk);font-size:14px!important}
+.fam-name{font-family:'Great Vibes',cursive;font-size:40px;line-height:1.35;padding:0 .15em}
+.fam-amp{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--text2);display:block;line-height:1}
+.pad-stage{position:relative;height:96px;margin-top:6px}
+.pad-item{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;
+  opacity:0;transform:translateY(12px) scale(.98);filter:blur(3px);transition:opacity 1.1s ease,transform 1.1s ease,filter 1.1s ease}
+.pad-item.on{opacity:1;transform:none;filter:none}
+.pad-item .fam-role{margin:0 0 2px}
+.pad-dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.pad-dots i{width:7px;height:7px;border-radius:50%;background:rgba(138,142,0,.25);transition:all .5s}
+.pad-dots i.on{background:var(--olive);transform:scale(1.35)}
+
+/* ── UBICACIONES · tarjetas en arco ── */
+#location{padding-bottom:80px}
+.arch-card{position:relative;max-width:330px;margin:34px auto 0;text-align:center;
+  background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,251,243,.9));
+  border-radius:180px 180px 26px 26px;padding:70px 26px 30px;
+  border:1px solid rgba(176,138,34,.45);box-shadow:0 18px 40px rgba(90,94,0,.10)}
+.arch-card::before{content:'';position:absolute;inset:8px;border-radius:172px 172px 20px 20px;border:1px dashed rgba(138,142,0,.35);pointer-events:none}
+.arch-ic{position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:62px;height:62px;border-radius:50%;
+  background:var(--paper);border:1.5px solid #C9A64A;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 18px rgba(176,138,34,.25)}
+.arch-ic i{font-size:30px;color:var(--olive-dk)}
+.arch-card .loc-type{color:var(--olive-dk);font-size:14px;margin-bottom:10px}
+.arch-card .loc-name{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:700;color:var(--text);line-height:1.25}
+.arch-card .loc-time{font-family:'Cormorant Garamond',serif;font-size:50px;font-weight:600;line-height:1.1;margin:14px 0 2px;display:inline-block}
+.arch-card .loc-time.tbd{font-size:26px;font-style:italic}
+.arch-card .loc-ampm{display:block;font-family:'Lato',sans-serif;font-size:14px;font-weight:700;letter-spacing:3px;color:var(--text2);margin-bottom:14px}
+.arch-card .loc-addr{color:var(--text2);opacity:1;font-size:16px;margin:4px 0 22px}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 26px;border-radius:50px;
+  background:linear-gradient(135deg,#6b6e00,#8a8e00 55%,#a3a72a);color:#fff;text-decoration:none;
+  font-family:'Cormorant Garamond',serif;font-weight:700;font-size:17px;letter-spacing:1.5px;
+  box-shadow:0 8px 22px rgba(90,94,0,.28);border:none;cursor:pointer;transition:transform .25s,box-shadow .25s}
+.pill:active{transform:scale(.96)}
+.pill i{font-size:20px}
+.pill.gold-pill{background:linear-gradient(120deg,#D4AF37,#E9CF7A 40%,#FFF4CC 50%,#E9CF7A 60%,#D4AF37);background-size:220% auto;
+  color:#2A2D1E;animation:goldShine 6s linear infinite}
+
+/* ── GUARDA LA FECHA ── */
+#calendar{border:none;background:transparent;padding:70px 22px}
+.cal-card{max-width:330px;margin:0 auto;background:rgba(255,255,255,.75);border:1px solid rgba(176,138,34,.35);border-radius:26px;padding:30px 22px 32px;box-shadow:0 14px 34px rgba(90,94,0,.08)}
+.cal-day{font-family:'Cormorant Garamond',serif;font-size:74px;font-weight:700;line-height:1}
+.cal-month{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--text2);margin-top:4px}
+.cal-sub{color:var(--text2);opacity:1}
+
+/* ── ITINERARIO infantil elegante ── */
+#itinerary{padding-bottom:84px}
+.it-flow{position:relative;max-width:330px;margin:38px auto 0}
+.it-step{position:relative;text-align:center;padding-bottom:34px}
+.it-step:not(:last-child)::after{content:'';position:absolute;left:50%;bottom:0;height:34px;width:0;border-left:2px dotted rgba(138,142,0,.55);transform:translateX(-50%)}
+.it-medal{width:84px;height:84px;margin:0 auto;border-radius:50%;position:relative;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 35% 30%,#fff,#FBF3E3 70%);border:2px solid #C9A64A;box-shadow:0 0 0 6px rgba(247,231,206,.9),0 10px 24px rgba(176,138,34,.22)}
+.it-medal i{font-size:38px;color:var(--olive-dk)}
+.it-medal::after{content:'\2726';position:absolute;top:-6px;right:-4px;font-size:16px;color:#C9A64A}
+.it-card{margin:16px auto 0;background:rgba(255,255,255,.86);border-radius:22px;border:1px solid rgba(176,138,34,.28);padding:16px 18px 18px;box-shadow:0 10px 26px rgba(90,94,0,.07)}
+.tl-time{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;line-height:1.2;display:inline-block}
+.tl-time.tbd{font-size:21px;font-style:italic}
+.it-ev{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:700;color:var(--text);margin-top:2px}
+.it-pl{font-size:16px;color:var(--text2);margin-top:4px;line-height:1.5}
+.it-star{display:block;text-align:center;color:#C9A64A;font-size:13px;margin:-26px 0 12px;position:relative;z-index:1}
+
+/* ── HOSPEDAJE (formato boda-roxana-y-omar) ── */
+.hosp-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:19px;text-align:center;color:var(--text2);max-width:320px;margin:0 auto 4px;line-height:1.55}
+.hosp-carousel{position:relative;max-width:350px;margin:30px auto 0}
+.hosp-viewport{overflow:hidden}
+.hosp-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.hosp-slide{flex:0 0 100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;padding:8px 30px}
+.hosp-photo{width:184px;height:184px;border-radius:50%;overflow:hidden;border:3px solid #fff;box-shadow:0 0 0 1.5px #C9A64A,0 14px 34px rgba(90,94,0,.22);margin-bottom:22px}
+.hosp-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.hosp-arrow{position:absolute;top:96px;transform:translateY(-50%);width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.9);border:1px solid rgba(176,138,34,.4);border-radius:50%;cursor:pointer;color:var(--olive-dk);z-index:2;padding:0}
+.hosp-arrow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2}
+.hosp-arrow.prev{left:-2px}.hosp-arrow.next{right:-2px}
+.hosp-dots{display:flex;justify-content:center;gap:8px;margin-top:22px}
+.hosp-dots button{width:8px;height:8px;border-radius:50%;border:none;background:rgba(138,142,0,.28);cursor:pointer;padding:0;transition:background .25s,transform .25s}
+.hosp-dots button.active{background:var(--olive);transform:scale(1.3)}
+.hc-name{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:25px;line-height:1.25;margin-bottom:6px;display:inline-block}
+.hosp-city{font-size:16px;color:var(--text2);margin-bottom:18px;line-height:1.5}
+
+/* ── LLUVIA DE SOBRES (formato boda-jeffersson-y-vanessa) ── */
+.env-rain{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.env-rain-item{position:absolute;top:-46px;will-change:transform;opacity:0}
+#gifts .env-stage{position:relative;z-index:1;text-align:center}
+.env-interactive{display:flex;flex-direction:column;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none;border:none;background:none;padding:0;margin:26px auto 0;opacity:0;font:inherit;color:inherit}
+.env-body{perspective:700px;position:relative;width:min(258px,74vw);aspect-ratio:260/200;filter:drop-shadow(0 10px 26px rgba(90,94,0,.2))}
+.env-body svg.env-svg{width:100%;height:100%;display:block}
+.env-flap-wrap{position:absolute;top:23%;left:6.9%;width:86.2%;height:43%;transform-origin:top center;transform-style:preserve-3d;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .65s cubic-bezier(.4,0,.2,1);pointer-events:none;z-index:2}
+.env-interactive.open .env-flap-wrap{transform:rotateX(-175deg)}
+.env-seal{position:absolute;top:52%;left:50%;width:24%;aspect-ratio:1;transform:translate(-50%,-50%);z-index:3;transition:opacity .35s ease,transform .5s cubic-bezier(.4,0,.2,1);pointer-events:none}
+.env-interactive.open .env-seal{opacity:0;transform:translate(-50%,-50%) scale(.7)}
+.env-open-content{overflow:hidden;max-height:0;opacity:0;transition:max-height .55s .3s ease,opacity .4s .38s ease;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 16px;text-align:center;pointer-events:none}
+.env-interactive.open .env-open-content{max-height:320px;opacity:1;pointer-events:auto;margin-top:20px}
+.env-mailbox-icon{font-size:44px;color:var(--olive-dk);margin-top:6px}
+.env-title{font-family:'Great Vibes',cursive;font-size:clamp(32px,9vw,38px);line-height:1.4;padding:.08em .1em}
+.env-desc{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;font-style:italic;color:var(--text);line-height:1.65;max-width:300px}
+#gifts{padding-bottom:90px}
+.env-tap-hint{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;letter-spacing:.28em;text-transform:uppercase;color:var(--olive-dk);margin-top:18px;opacity:0;transition:opacity .5s ease;position:relative;z-index:1;text-align:center}
+.env-tap-hint.show{opacity:.95;animation:envHintPulse 2.4s ease-in-out infinite}
+.env-interactive.open~.env-tap-hint{opacity:0!important;animation:none;pointer-events:none}
+@keyframes envHintPulse{0%,100%{opacity:.55}50%{opacity:1}}
+.env-body.landed{animation:envBreathe 3.6s ease-in-out infinite}
+@keyframes envBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+
+/* ── ÁLBUM / DRESS CODE (tema claro) ── */
+.alb-qr-frame{background:#fff;box-shadow:0 14px 34px rgba(90,94,0,.14),0 0 0 1.5px #C9A64A}
+.alb-sub,.alb-hint,.dc-sub,.gf-sub,.rsvp-sub{color:var(--text2);opacity:1}
+.dc-note{background:rgba(255,255,255,.75);border-left-color:var(--olive);color:var(--text);opacity:1;border-radius:0 14px 14px 0}
+.dc-note strong{color:var(--olive-dk)}
+.pal-sw{border:2px solid #fff;box-shadow:0 0 0 1px rgba(176,138,34,.4),0 6px 16px rgba(0,0,0,.12)}
+.pal-nm{color:var(--text);opacity:1;font-size:13px!important;font-weight:700}
+.btn{border-radius:50px;border-color:var(--olive);color:var(--olive-dk);font-size:15px!important}
+.btn:active{background:rgba(138,142,0,.08)}
+
+/* ── GALERÍA · RUEDA 3D (formato boda-veronica-y-andres) ── */
+#gallery{padding:340px 0 340px;text-align:center}
+.wheel-scene{position:relative;width:100%;height:470px;margin:26px auto 0;perspective:1400px;transform-style:preserve-3d}
+.wheel-ring{position:absolute;width:100%;height:100%;transform-style:preserve-3d;cursor:grab}
+.wheel-ring.dragging{cursor:grabbing}
+.wheel-card{position:absolute;width:190px;height:266px;left:50%;top:50%;margin-left:-95px;margin-top:-133px;border-radius:18px;overflow:hidden;
+  border:2px solid rgba(233,207,122,.55);box-shadow:0 14px 40px rgba(0,0,0,.4);user-select:none;-webkit-user-select:none;background:#2a2c1c}
+.wheel-card img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.gal-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;font-weight:600;letter-spacing:3px;color:#F2DB94;margin-top:8px}
+
+/* ── RSVP (tema claro) ── */
+.finput{background:#fff;border:1px solid rgba(138,142,0,.35);color:var(--text)}
+.finput::placeholder{color:rgba(75,78,60,.55)}
+.finput:focus{border-color:var(--olive);box-shadow:0 0 0 3px rgba(138,142,0,.12)}
+.rlbl{border-color:rgba(138,142,0,.35);background:#fff;color:var(--text);opacity:1}
+.ropt input:checked+.rlbl{border-color:var(--olive);background:rgba(138,142,0,.1);color:var(--olive-dk)}
+.flbl{color:var(--olive-dk)}
+.rsvp-greeting{color:var(--text)}
+.btn-gold{border:none;color:#2A2D1E;background:linear-gradient(120deg,#D4AF37,#E9CF7A 40%,#FFF4CC 50%,#E9CF7A 60%,#D4AF37);background-size:220% auto;animation:goldShine 6s linear infinite;transition:transform .2s}
+.qr-card{background:#fff;border-color:rgba(176,138,34,.35)}
+.rsvp-wrap{max-width:360px;margin:0 auto;background:rgba(255,255,255,.72);border:1px solid rgba(176,138,34,.3);border-radius:26px;padding:26px 20px}
+
+/* ── FOOTER ── */
+#footer{border:none;padding:360px 22px 70px}
+.ft-nms{font-family:'Great Vibes',cursive;font-size:58px;line-height:1.3;padding:0 .15em;display:inline-block;background-image:var(--gold-shine)}
+.ft-dt,.ft-note{color:#F7F3EC}
+.el-credit{color:#F7F3EC}
+
+/* ── UI flotante ── */
+.music-btn{background:rgba(255,255,255,.9);border-color:rgba(176,138,34,.5);color:var(--olive-dk);box-shadow:0 6px 20px rgba(90,94,0,.2)}
+#toast{background:rgba(255,255,255,.96);color:var(--olive-dk);border-color:var(--olive)}
+#prog{background:linear-gradient(to right,var(--olive),#D4AF37)}
   </style>
 </head>
 <body>
@@ -484,7 +717,7 @@ textarea.finput{resize:vertical;min-height:96px;font-family:inherit;line-height:
 <!-- ENVELOPE SCREEN -->
 <div id="envelope-screen" role="button" aria-label="Toca para abrir tu invitación">
   <img id="env-image" src="sobre.jpg" alt="Sobre invitación del bautizo de Jorge Esteban" />
-  <video id="env-video" src="sobre-apertura.mp4" playsinline webkit-playsinline muted preload="auto"></video>
+  <video id="env-video" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/sobre-apertura.mp4" poster="sobre.jpg" playsinline webkit-playsinline muted preload="auto"></video>
   <p class="envelope-hint" id="env-hint">Toca para abrir</p>
 </div>
 <div id="env-flash"></div>
@@ -505,224 +738,221 @@ textarea.finput{resize:vertical;min-height:96px;font-family:inherit;line-height:
 <div id="toast"></div>
 
 
-<!-- ═══════════════ 1. HERO ════════════════ -->
+<!-- ═══ 1. HERO ═══ -->
 <section id="hero">
-  <!-- Background photo (parallax target) -->
   <div class="h-bg" id="heroBg">
-    <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/hero.jpg"
-         alt="Jorge Esteban Ruiz" loading="eager" id="heroPic">
+    <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/hero.jpg" alt="Jorge Esteban Ruiz" loading="eager" id="heroPic">
   </div>
   <div class="h-ov"></div>
   <div class="h-frame"></div>
   <div class="h-particles" id="hPart"></div>
 
   <div class="h-cnt" id="hCnt">
-    <div class="h-clip"><span class="h-name foil" id="hN1">Jorge</span></div>
+    <div class="h-clip"><span class="h-name gold" id="hN1">Jorge</span></div>
     <div class="h-amp-clip"><span class="h-amp" id="hAmp">✦</span></div>
-    <div class="h-clip"><span class="h-name foil" id="hN2">Esteban</span></div>
-
+    <div class="h-clip"><span class="h-name gold" id="hN2">Esteban</span></div>
     <p class="h-we" id="hWe">Mi Bautizo</p>
-
     <div class="gline" style="margin-top:18px" id="hLine"></div>
-
     <div class="h-date-wrap" id="hDate">
       <p class="h-date">27 · Noviembre · MMXXVI</p>
       <p class="h-city">Mazatlán · Sinaloa</p>
     </div>
   </div>
-
-  <div class="h-scroll" id="hScroll">
-    <div class="h-scroll-line"></div>
-    <span>Desliza</span>
-  </div>
+  <div class="h-scroll" id="hScroll"><div class="h-scroll-line"></div><span>Desliza</span></div>
 </section>
 
-
-<!-- ═══════════════ 2. CUENTA REGRESIVA ══════════ -->
-<section id="countdown">
-  <span class="lbl">Mi gran día llega en</span>
-  <h2 class="ttl">Cuenta Regresiva</h2>
+<!-- ═══ 2. CUENTA REGRESIVA ═══ -->
+<section id="countdown" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-nubes.jpg);--bgo:.75">
+  <span class="lbl rv">Mi gran día llega en</span>
+  <h2 class="ttl rv">Cuenta Regresiva</h2>
   <div class="gline"></div>
-  <div class="cd-grid">
+  <div class="cd-grid rv">
     <div class="cd-box"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">Días</span></div>
     <div class="cd-box"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">Horas</span></div>
     <div class="cd-box"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">Minutos</span></div>
     <div class="cd-box"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">Segundos</span></div>
   </div>
+  <p class="cd-sub rv">Viernes 27 de noviembre de 2026</p>
 </section>
 
-
-<!-- ═══════════════ 3. FAMILIA ══════════════ -->
-<section id="family">
-  <span class="lbl">Con amor</span>
-  <h2 class="ttl">Mis Padres y Padrinos</h2>
+<!-- ═══ 3. PADRES Y PADRINOS ═══ -->
+<section id="family" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-olivo.jpg);--bgo:.8">
+  <span class="lbl rv">Con amor</span>
+  <h2 class="ttl rv">Mis Padres y Padrinos</h2>
   <div class="gline"></div>
+  <p class="fam-quote rv">De la mano de quienes me cuidan,<br>doy mi primer paso en la fe.</p>
 
-  <p class="fam-ttl">De la mano de quienes me cuidan,<br>doy mi primer paso en la fe.</p>
+  <div class="fam-block rv">
+    <i class="ph-light ph-baby fam-ic"></i>
+    <p class="fam-role">Mis Papás</p>
+    <span class="fam-name">Jorge E. Ruiz</span>
+    <span class="fam-amp">&amp;</span>
+    <span class="fam-name">Samantha Uriarte</span>
+  </div>
 
-  <div class="sdiv"></div>
-
-  <p class="fam-ttl">Mis Papás</p>
-  <div class="fam-card"><p class="fam-nms">Jorge E. Ruiz<br><span class="fam-sep">&amp;</span><br>Samantha Uriarte</p></div>
-
-  <div class="sdiv"></div>
-
-  <p class="fam-ttl">Mis Padrinos</p>
-  <div class="fam-card"><p class="fam-role">✦  Madrina</p><p class="fam-nms">Inés Moreno</p></div>
-  <div class="fam-card"><p class="fam-role">✦  Padrino</p><p class="fam-nms">Leonardo Uriarte</p></div>
-  <div class="fam-card"><p class="fam-role">✦  Madrina</p><p class="fam-nms">Paola Mata</p></div>
+  <div class="fam-block rv">
+    <p class="fam-role">Mis Padrinos</p>
+    <div class="pad-stage" id="padStage">
+      <div class="pad-item on"><span class="fam-name">Inés Moreno</span></div>
+      <div class="pad-item"><span class="fam-name">Leonardo Uriarte</span></div>
+      <div class="pad-item"><span class="fam-name">Paola Mata</span></div>
+    </div>
+    <div class="pad-dots" id="padDots"><i class="on"></i><i></i><i></i></div>
+  </div>
 </section>
 
-
-<!-- ═══════════════ 4. UBICACIONES ════════════ -->
-<section id="location">
-  <span class="lbl">¿Dónde y cuándo?</span>
-  <h2 class="ttl">La Celebración</h2>
+<!-- ═══ 4. CEREMONIA Y RECEPCIÓN ═══ -->
+<section id="location" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-arcos.jpg);--bgo:.6">
+  <span class="lbl rv">¿Dónde y cuándo?</span>
+  <h2 class="ttl rv">La Celebración</h2>
   <div class="gline"></div>
 
-  <div class="loc-card">
-    <p class="loc-type">✦  Ceremonia Religiosa</p>
+  <div class="arch-card rv">
+    <div class="arch-ic"><i class="ph-light ph-church"></i></div>
+    <p class="loc-type">Ceremonia Religiosa</p>
     <h3 class="loc-name">Parroquia María del Mar</h3>
-    <div class="loc-time" style="font-size:30px">Horario <em>por confirmar</em></div>
+    <div class="loc-time tbd">Horario por confirmar</div>
     <p class="loc-addr">Carnaval, Playas del Sur<br>82040 Mazatlán, Sin.</p>
-    <a href="https://www.google.com/maps/place/Parroquia+Mar%C3%ADa+del+Mar/@23.1925493,-106.4204075,17z/data=!4m6!3m5!1s0x869f53ebb114c249:0xeb2247514686544f!8m2!3d23.1925493!4d-106.4204075"
-       target="_blank" rel="noopener" class="btn">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Ver en GPS / Google Maps
-    </a>
+    <a href="https://www.google.com/maps/place/Parroquia+Mar%C3%ADa+del+Mar/@23.1925493,-106.4204075,17z/data=!4m6!3m5!1s0x869f53ebb114c249:0xeb2247514686544f!8m2!3d23.1925493!4d-106.4204075" target="_blank" rel="noopener" class="pill"><i class="ph-light ph-map-pin"></i> Cómo llegar</a>
   </div>
 
-  <div class="loc-card">
-    <p class="loc-type">✦  Recepción</p>
+  <div class="arch-card rv" style="margin-top:62px">
+    <div class="arch-ic"><i class="ph-light ph-confetti"></i></div>
+    <p class="loc-type">Recepción</p>
     <h3 class="loc-name">LaFerro Salón Jardín</h3>
-    <div class="loc-time">7:00 <em>PM</em></div>
+    <div class="loc-time">7:00</div>
+    <span class="loc-ampm">P.M.</span>
     <p class="loc-addr">Flamingos 301, Palos Prietos<br>82010 Mazatlán, Sin.</p>
-    <a href="https://www.google.com/maps/place/LaFerro+Sal%C3%B3n+Jard%C3%ADn/@23.2168384,-106.4189978,17z/data=!4m6!3m5!1s0x1407af3f9bd34de9:0x39d6d0caaec85d47!8m2!3d23.2168384!4d-106.4189978"
-       target="_blank" rel="noopener" class="btn">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Ver en GPS / Google Maps
-    </a>
-  </div>
-
-  <div class="loc-card">
-    <p class="loc-type">✦  Hospedaje sugerido</p>
-    <h3 class="loc-name">Holiday Inn Express &amp; Suites Mazatlán</h3>
-    <p class="loc-addr" style="margin-top:14px">Av. del Mar 1223, Zona Costera<br>82017 Mazatlán, Sin.</p>
-    <a href="https://www.google.com/maps/search/?api=1&query=Holiday+Inn+Express+%26+Suites+Mazatlan+Av+del+Mar+1223+Zona+Costera+82017+Mazatl%C3%A1n+Sin"
-       target="_blank" rel="noopener" class="btn">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Ver en Google Maps
-    </a>
-  </div>
-
-  <div class="loc-card">
-    <p class="loc-type">✦  Hospedaje sugerido</p>
-    <h3 class="loc-name">Varali Grand Hotel</h3>
-    <p class="loc-addr" style="margin-top:14px">Av. del Mar 2614, Tellería<br>82149 Mazatlán, Sin.</p>
-    <a href="https://www.google.com/maps/search/?api=1&query=Varali+Grand+Hotel+Av+del+Mar+2614+Teller%C3%ADa+82149+Mazatl%C3%A1n+Sin"
-       target="_blank" rel="noopener" class="btn">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Ver en Google Maps
-    </a>
+    <a href="https://www.google.com/maps/place/LaFerro+Sal%C3%B3n+Jard%C3%ADn/@23.2168384,-106.4189978,17z/data=!4m6!3m5!1s0x1407af3f9bd34de9:0x39d6d0caaec85d47!8m2!3d23.2168384!4d-106.4189978" target="_blank" rel="noopener" class="pill"><i class="ph-light ph-map-pin"></i> Cómo llegar</a>
   </div>
 </section>
 
-
-<!-- ═══════════════ 5. CALENDAR ══════════════ -->
-<section id="calendar">
-  <span class="lbl">No lo olvides</span>
-  <h2 class="ttl" style="font-size:28px">Guarda la Fecha</h2>
+<!-- ═══ 5. GUARDA LA FECHA ═══ -->
+<section id="calendar" class="bgx plain">
+  <span class="lbl rv">No lo olvides</span>
+  <h2 class="ttl rv">Guarda la Fecha</h2>
   <div class="gline"></div>
-  <p class="cal-sub">Agrega mi bautizo a tu calendario<br>para no perderte ni un momento.</p>
-  <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Bautizo+de+Jorge+Esteban+Ruiz&dates=20261127T190000/20261128T020000&details=Ceremonia+religiosa+en+la+Parroquia+Mar%C3%ADa+del+Mar+(horario+por+confirmar).+Recepci%C3%B3n+7:00+PM+-+LaFerro+Sal%C3%B3n+Jard%C3%ADn.&location=Flamingos+301%2C+Palos+Prietos%2C+82010+Mazatl%C3%A1n%2C+Sin."
-     target="_blank" rel="noopener" id="calBtn"
-     class="btn btn-gold" style="max-width:310px;margin:0 auto;display:flex">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-    Agregar a Google Calendar
-  </a>
-</section>
-
-
-<!-- ═══════════════ 6. ITINERARIO ════════════ -->
-<section id="itinerary">
-  <span class="lbl">Así será el día</span>
-  <h2 class="ttl">Itinerario</h2>
-  <div class="gline"></div>
-  <div class="timeline" id="tlWrap">
-    <div class="tl-track" id="tlTrack"></div>
-
-    <div class="tl-row"><div class="tl-t">Por<br>confirmar</div><div class="tl-dot"></div><div><p class="tl-ev">Ceremonia Religiosa</p><p class="tl-de">Parroquia María del Mar · Mazatlán</p></div></div>
-    <div class="tl-row"><div class="tl-t">7:00<br>PM</div><div class="tl-dot"></div><div><p class="tl-ev">Recepción</p><p class="tl-de">LaFerro Salón Jardín</p></div></div>
-    <div class="tl-row"><div class="tl-t">8:00<br>PM</div><div class="tl-dot"></div><div><p class="tl-ev">Cena</p><p class="tl-de">Servicio en mesa</p></div></div>
+  <div class="cal-card rv">
+    <div class="cal-day gold">27</div>
+    <div class="cal-month">Noviembre · 2026</div>
+    <p class="cal-sub">Agrega mi bautizo a tu calendario<br>para no perderte ni un momento.</p>
+    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Bautizo+de+Jorge+Esteban+Ruiz&dates=20261127T190000/20261128T020000&details=Ceremonia+religiosa+en+la+Parroquia+Mar%C3%ADa+del+Mar+(horario+por+confirmar).+Recepci%C3%B3n+7:00+PM+-+LaFerro+Sal%C3%B3n+Jard%C3%ADn.&location=Flamingos+301%2C+Palos+Prietos%2C+82010+Mazatl%C3%A1n%2C+Sin."
+       target="_blank" rel="noopener" id="calBtn" class="pill gold-pill"><i class="ph-light ph-calendar-plus"></i> Agregar a Google Calendar</a>
   </div>
 </section>
 
-
-<!-- ═══════════════ 7. NIÑOS BIENVENIDOS ═════════ -->
-<section id="kids-policy">
-  <span class="lbl">Con todo nuestro cariño</span>
-  <h2 class="ttl">Niños Bienvenidos</h2>
+<!-- ═══ 6. ITINERARIO ═══ -->
+<section id="itinerary" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-patron.jpg);--bgo:.4">
+  <span class="lbl rv">Así será el día</span>
+  <h2 class="ttl rv">Itinerario</h2>
   <div class="gline"></div>
-  <div class="kp-card">
-    <div class="kp-icons">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-9a4 4 0 017-2.6A4 4 0 0119 12c0 4.5-7 9-7 9z"/></svg>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l7-5 7 5"/><path d="M8 21h8"/></svg>
+  <div class="it-flow">
+    <div class="it-step rv">
+      <div class="it-medal"><i class="ph-light ph-church"></i></div>
+      <div class="it-card"><span class="tl-time tbd">Hora por confirmar</span><p class="it-ev">Ceremonia Religiosa</p><p class="it-pl">Parroquia María del Mar</p></div>
     </div>
-    <p class="kp-msg">Este día es una fiesta en familia.<br>Los niños son más que bienvenidos<br>a celebrar conmigo.</p>
-    <p class="kp-note">Una celebración para todos · Los esperamos</p>
-  </div>
-</section>
-
-
-<!-- ═══════════════ 8. LLUVIA DE SOBRES ══════════ -->
-<section id="gifts">
-  <span class="lbl">Tu presencia es mi mejor regalo</span>
-  <h2 class="ttl">Lluvia de Sobres</h2>
-  <div class="gline"></div>
-  <p class="gf-sub">Si deseas obsequiarme algo especial,<br>lo recibiremos con mucho cariño.</p>
-
-  <div class="gf-card">
-    <div class="gf-card-top">
-      <div class="gf-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
-      <p class="gf-ttl">Lluvia de sobres</p>
+    <div class="it-step rv">
+      <div class="it-medal"><i class="ph-light ph-confetti"></i></div>
+      <div class="it-card"><span class="tl-time">7:00 P.M.</span><p class="it-ev">Recepción</p><p class="it-pl">LaFerro Salón Jardín</p></div>
     </div>
-    <p class="gf-nt">Habrá un buzón en la recepción<br>para recibir tu sobre el día del evento.</p>
+    <div class="it-step rv">
+      <div class="it-medal"><i class="ph-light ph-fork-knife"></i></div>
+      <div class="it-card"><span class="tl-time">8:00 P.M.</span><p class="it-ev">Cena</p><p class="it-pl">¡A disfrutar en familia!</p></div>
+    </div>
   </div>
 </section>
 
-
-<!-- ═══════════════ 9. ÁLBUM COMPARTIDO ═══════════ -->
-<section id="album">
-  <span class="lbl">Captura cada momento</span>
-  <h2 class="ttl">Álbum Compartido</h2>
+<!-- ═══ 7. HOSPEDAJE ═══ -->
+<section id="lodging" class="bgx plain">
+  <span class="lbl rv">Para tu estancia</span>
+  <h2 class="ttl rv">Hospedaje Sugerido</h2>
   <div class="gline"></div>
-  <p class="alb-sub">Escanea el código QR y sube las fotos<br>que tomes durante el evento.</p>
+  <p class="hosp-sub rv">Si vienes de fuera, te recomendamos estas opciones en Mazatlán.</p>
+  <div class="hosp-carousel rv">
+    <button class="hosp-arrow prev" aria-label="Anterior"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <button class="hosp-arrow next" aria-label="Siguiente"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <div class="hosp-viewport">
+      <div class="hosp-track" id="hospTrack">
+        <div class="hosp-slide">
+          <div class="hosp-photo"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/hotel1.jpg" alt="Holiday Inn Express &amp; Suites Mazatlán" loading="eager"></div>
+          <div class="hc-name">Holiday Inn Express &amp; Suites</div>
+          <div class="hosp-city">Av. del Mar 1223, Zona Costera<br>Mazatlán, Sin.</div>
+          <a class="pill" href="https://www.google.com/maps/search/?api=1&query=Holiday+Inn+Express+%26+Suites+Mazatlan+Av+del+Mar+1223+Zona+Costera+82017+Mazatl%C3%A1n+Sin" target="_blank" rel="noopener"><i class="ph-light ph-map-pin"></i> Cómo llegar</a>
+        </div>
+        <div class="hosp-slide">
+          <div class="hosp-photo"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/hotel2.jpg" alt="Varali Grand Hotel" loading="eager"></div>
+          <div class="hc-name">Varali Grand Hotel</div>
+          <div class="hosp-city">Av. del Mar 2614, Tellería<br>Mazatlán, Sin.</div>
+          <a class="pill" href="https://www.google.com/maps/place/Varali+Grand+Hotel/@23.2376079,-106.4425811,17z/data=!4m6!3m5!1s0x869f536228d080f3:0xe2e7f73eb64a6bcc!8m2!3d23.2376079!4d-106.4425811" target="_blank" rel="noopener"><i class="ph-light ph-map-pin"></i> Cómo llegar</a>
+        </div>
+      </div>
+    </div>
+    <div class="hosp-dots" id="hospDots"><button class="active" aria-label="Hotel 1"></button><button aria-label="Hotel 2"></button></div>
+  </div>
+</section>
 
-  <div class="alb-qr-wrap">
+<!-- ═══ 8. LLUVIA DE SOBRES ═══ -->
+<section id="gifts" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-acuarela.jpg);--bgo:.55">
+  <div class="env-rain" id="envRain" aria-hidden="true"></div>
+  <div class="env-stage">
+    <span class="lbl">Tu presencia es mi mejor regalo</span>
+    <h2 class="ttl">Lluvia de Sobres</h2>
+    <div class="gline"></div>
+    <button class="env-interactive" id="envGift" type="button" aria-label="Sobre — toca para abrir" aria-expanded="false">
+      <div class="env-body" id="envGiftBody">
+        <svg class="env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
+          <defs><linearGradient id="envPaper" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FFFBF2"/><stop offset="100%" stop-color="#F7E7CE"/></linearGradient></defs>
+          <rect x="18" y="52" width="224" height="132" rx="8" fill="url(#envPaper)" stroke="rgba(138,142,0,.55)" stroke-width="1.4"/>
+          <path d="M18 184 L130 110 L242 184" stroke="rgba(138,142,0,.32)" stroke-width="1" fill="none"/>
+        </svg>
+        <div class="env-flap-wrap" aria-hidden="true">
+          <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%;display:block">
+            <defs><linearGradient id="envFlap" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#F7E7CE"/><stop offset="100%" stop-color="#FFFBF2"/></linearGradient></defs>
+            <path d="M0 0 L112 86 L224 0 Z" fill="url(#envFlap)" stroke="rgba(138,142,0,.55)" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <svg class="env-seal" viewBox="0 0 60 60" aria-hidden="true">
+          <defs><linearGradient id="sealG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F2DB94"/><stop offset="50%" stop-color="#D4AF37"/><stop offset="100%" stop-color="#8C6A12"/></linearGradient></defs>
+          <circle cx="30" cy="30" r="28" fill="#6b6e00"/>
+          <circle cx="30" cy="30" r="28" fill="none" stroke="#3f4100" stroke-width="2" opacity=".55"/>
+          <circle cx="30" cy="30" r="21.5" fill="none" stroke="url(#sealG)" stroke-width="1.3"/>
+          <text x="30" y="36.5" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="19" fill="url(#sealG)">JER</text>
+        </svg>
+      </div>
+      <div class="env-open-content" aria-live="polite">
+        <i class="ph-light ph-envelope-simple env-mailbox-icon"></i>
+        <p class="env-title gold">Tu presencia es mi regalo</p>
+        <p class="env-desc">Si deseas obsequiarme algo, el día del evento habrá un buzón en la recepción para recibir tu sobre con mucho cariño.</p>
+      </div>
+    </button>
+    <p class="env-tap-hint" id="envGiftHint">Toca para abrir</p>
+  </div>
+</section>
+
+<!-- ═══ 9. ÁLBUM COMPARTIDO ═══ -->
+<section id="album" class="bgx plain">
+  <span class="lbl rv">Captura cada momento</span>
+  <h2 class="ttl rv">Álbum Compartido</h2>
+  <div class="gline"></div>
+  <p class="alb-sub rv">Escanea el código QR y sube las fotos<br>que tomes durante el evento.</p>
+  <div class="alb-qr-wrap rv">
     <div class="alb-qr-frame">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&color=0A0908&bgcolor=F7F3EC&data=https%3A%2F%2Fphotos.app.goo.gl%2Fbautizo-jorge-esteban-ruiz"
-           alt="QR álbum compartido del bautizo de Jorge Esteban" class="alb-qr" loading="lazy">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&color=2A2D1E&bgcolor=FFFFFF&data=https%3A%2F%2Fphotos.app.goo.gl%2Fbautizo-jorge-esteban-ruiz"
+           alt="QR álbum compartido del bautizo de Jorge Esteban" class="alb-qr" loading="eager">
     </div>
     <p class="alb-scan">Escanea con la cámara</p>
   </div>
-
-  <a href="https://photos.app.goo.gl/bautizo-jorge-esteban-ruiz" target="_blank" rel="noopener" class="btn alb-btn">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-    Abrir álbum
-  </a>
-
-  <p class="alb-hint">Compartirás tus fotos con los demás invitados.<br>Podrás ver el álbum completo después del evento.</p>
+  <div style="text-align:center" class="rv"><a href="https://photos.app.goo.gl/bautizo-jorge-esteban-ruiz" target="_blank" rel="noopener" class="pill">Abrir álbum</a></div>
+  <p class="alb-hint rv">Compartirás tus fotos con los demás invitados.<br>Podrás ver el álbum completo después del evento.</p>
 </section>
 
-
-<!-- ═══════════════ 10. DRESS CODE ════════════ -->
-<section id="dresscode">
-  <span class="lbl">Vestimenta</span>
-  <h2 class="ttl">Código de Vestimenta</h2>
+<!-- ═══ 10. CÓDIGO DE VESTIMENTA ═══ -->
+<section id="dresscode" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-nubes.jpg);--bgo:.55">
+  <span class="lbl rv">Vestimenta</span>
+  <h2 class="ttl rv">Código de Vestimenta</h2>
   <div class="gline"></div>
-  <p class="dc-sub"><em style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600">Semi formal</em><br>Ayúdanos a crear un ambiente especial<br>con esta paleta de colores.</p>
-  <div class="palette" id="palette">
+  <p class="dc-sub rv"><em style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--olive-dk)">Semi formal</em><br>Ayúdanos a crear un ambiente especial<br>con esta paleta de colores.</p>
+  <div class="palette rv" id="palette">
     <div class="pal-item"><div class="pal-sw" style="background:#012c00"></div><p class="pal-nm">V. Bosque</p></div>
     <div class="pal-item"><div class="pal-sw" style="background:#463400"></div><p class="pal-nm">Olivo</p></div>
     <div class="pal-item"><div class="pal-sw" style="background:#3f1300"></div><p class="pal-nm">Chocolate</p></div>
@@ -731,35 +961,38 @@ textarea.finput{resize:vertical;min-height:96px;font-family:inherit;line-height:
     <div class="pal-item"><div class="pal-sw" style="background:#ffb0d2"></div><p class="pal-nm">Rosa</p></div>
     <div class="pal-item"><div class="pal-sw" style="background:#000100"></div><p class="pal-nm">Negro</p></div>
   </div>
-  <div class="dc-note" id="dcNote">
+  <div class="dc-note rv" id="dcNote">
     <strong>Un detalle:</strong>
     Estos colores son solo una sugerencia · Lo importante es que vengas cómodo y nos acompañes.
   </div>
 </section>
 
-
-<!-- ═══════════════ 11. GALERÍA ══════════════ -->
-<section id="gallery">
-  <span class="lbl">Mis primeros días</span>
-  <h2 class="ttl">Galería</h2>
+<!-- ═══ 11. GALERÍA · RUEDA 3D ═══ -->
+<section id="gallery" class="bgx dark" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-oscuro.jpg);--bgo:.85">
+  <span class="lbl rv">Mis primeros días</span>
+  <h2 class="ttl rv">Galería</h2>
   <div class="gline"></div>
-  <div class="gal-grid" id="galGrid">
-    <div class="g-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/g1.jpg" alt="Jorge Esteban" loading="lazy"></div>
-    <div class="g-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/g2.jpg" alt="Jorge Esteban" loading="lazy"></div>
-    <div class="g-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/g3.jpg" alt="Jorge Esteban" loading="lazy"></div>
-    <div class="g-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/g4.jpg" alt="Jorge Esteban" loading="lazy"></div>
-    <div class="g-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/g5.jpg" alt="Jorge Esteban" loading="lazy"></div>
+  <div class="wheel-scene" id="wheel-scene">
+    <div class="wheel-ring" id="wheel-ring">
+      <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/w1.jpg" alt="Jorge Esteban" loading="eager" decoding="async"></div>
+      <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/w2.jpg" alt="Jorge Esteban" loading="eager" decoding="async"></div>
+      <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/w3.jpg" alt="Jorge Esteban" loading="eager" decoding="async"></div>
+      <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/w4.jpg" alt="Jorge Esteban" loading="eager" decoding="async"></div>
+      <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/w5.jpg" alt="Jorge Esteban" loading="eager" decoding="async"></div>
+      <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/w6.jpg" alt="Jorge Esteban" loading="eager" decoding="async"></div>
+    </div>
   </div>
+  <p class="gal-hint">Arrastra para girar</p>
 </section>
 
-
 <!-- ═══════════════ 12. RSVP ═════════════════════════ -->
-<section id="rsvp">
+<section id="rsvp" class="bgx plain">
   <span class="lbl">Confirmación de asistencia</span>
   <h2 class="ttl">¿Me acompañas?</h2>
   <div class="gline"></div>
   <p class="rsvp-sub">Confirma antes del<br><span class="rsvp-dl">1 de Noviembre de 2026</span></p>
 
+  <div class="rsvp-wrap rv">
   <div id="rsvpGreeting"></div>
 
   <form id="rsvpForm" onsubmit="submitRSVP(event)" novalidate>
@@ -803,6 +1036,7 @@ textarea.finput{resize:vertical;min-height:96px;font-family:inherit;line-height:
     </div>
   </form>
 
+  </div>
   <!-- Códigos de acceso QR (aparecen al confirmar) -->
   <div id="qrSection" style="display:none">
     <div class="sdiv"></div>
@@ -813,14 +1047,13 @@ textarea.finput{resize:vertical;min-height:96px;font-family:inherit;line-height:
 </section>
 
 
-<!-- ═══════════════ 13. FOOTER ══════════════ -->
-<footer id="footer">
+<!-- ═══ 13. FOOTER ═══ -->
+<footer id="footer" class="bgx dark" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-oscuro.jpg);--bgo:.7;position:relative;isolation:isolate;overflow:hidden">
   <div class="ft-orn">✦ · ✦ · ✦</div>
-  <div class="ft-nms foil">Jorge Esteban</div>
+  <div class="ft-nms">Jorge Esteban</div>
   <div class="gline" style="margin-top:22px"></div>
   <p class="ft-dt">27 · Noviembre · MMXXVI</p>
   <p class="ft-note">Mazatlán · Sinaloa · México<br>Con amor, la familia Ruiz Uriarte</p>
-
   <div class="el-sep"></div>
   <a href="https://www.instagram.com/elysium.invitaciones/" target="_blank" rel="noopener" class="el-credit">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
@@ -965,7 +1198,7 @@ function spawnParticles() {
     const sz = Math.random() * 2.8 + .6;
     Object.assign(p.style, {
       position: 'absolute', width: sz + 'px', height: sz + 'px',
-      background: '#D4AF37', borderRadius: '50%',
+      background: '#F2DB94', borderRadius: '50%',
       left: Math.random() * 100 + '%', bottom: '-8px',
       opacity: '0', willChange: 'transform,opacity'
     });
@@ -983,117 +1216,145 @@ function spawnParticles() {
   }
 }
 
-/* ── SCROLL ANIMATIONS ───────────────────────────────── */
+/* ── SCROLL ANIMATIONS + MÓDULOS ─────────────────────── */
 function scrollAnims() {
-  const ease = 'power3.out';
+  /* Reveal por clase: si algo falla, el contenido queda visible (nunca opacity:0 atorado) */
+  var rvs = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    rvs.forEach(function (el) { io.observe(el); });
+  }
+  setTimeout(function () { rvs.forEach(function (el) { el.classList.add('in'); }); }, 12000);
+  function sweep() {
+    var h = window.innerHeight;
+    rvs.forEach(function (el) { if (!el.classList.contains('in') && el.getBoundingClientRect().top < h * 0.95) el.classList.add('in'); });
+  }
+  window.addEventListener('scroll', sweep, { passive: true });
+  sweep();
 
-  // Generic section titles
-  document.querySelectorAll('section').forEach(sec => {
-    const els = sec.querySelectorAll('.lbl,.ttl,.gline');
-    if (els.length) {
-      gsap.from(els, {
-        opacity: 0, y: 22, duration: .7, stagger: .1, ease,
-        scrollTrigger: { trigger: sec, start: 'top 88%', once: true }
-      });
-    }
-  });
+  initPadrinos();
+  initHosp();
+  initWheel();
+  initGift();
+}
 
-  // Countdown boxes
-  gsap.from('.cd-box', {
-    opacity: 0, y: 28, scale: .88, duration: .65, stagger: .09,
-    ease: 'back.out(1.5)',
-    scrollTrigger: { trigger: '#countdown', start: 'top 85%', once: true }
-  });
+/* ── PADRINOS: aparecen y desaparecen uno por uno ── */
+function initPadrinos() {
+  var items = document.querySelectorAll('#padStage .pad-item');
+  var dots = document.querySelectorAll('#padDots i');
+  if (!items.length) return;
+  var idx = 0;
+  setInterval(function () {
+    items[idx].classList.remove('on'); dots[idx].classList.remove('on');
+    idx = (idx + 1) % items.length;
+    items[idx].classList.add('on'); dots[idx].classList.add('on');
+  }, 3400);
+}
 
-  // Location cards
-  gsap.from('.loc-card', {
-    opacity: 0, y: 36, duration: .75, stagger: .14, ease,
-    scrollTrigger: { trigger: '#location', start: 'top 78%', once: true }
-  });
+/* ── HOSPEDAJE: carrusel (formato boda-roxana-y-omar) ── */
+function initHosp() {
+  var track = document.getElementById('hospTrack');
+  if (!track) return;
+  var n = track.children.length, dots = document.querySelectorAll('#hospDots button'), idx = 0;
+  function go(i) {
+    idx = (i + n) % n;
+    track.style.transform = 'translateX(' + (-idx * 100) + '%)';
+    dots.forEach(function (d, k) { d.classList.toggle('active', k === idx); });
+  }
+  document.querySelector('.hosp-arrow.prev').addEventListener('click', function () { go(idx - 1); });
+  document.querySelector('.hosp-arrow.next').addEventListener('click', function () { go(idx + 1); });
+  dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k); }); });
+  var sx = 0, sy = 0;
+  track.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+  track.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? idx + 1 : idx - 1);
+  }, { passive: true });
+  go(0);
+}
 
-  // Calendar button
-  gsap.from(['#calendar .cal-sub', '#calBtn'], {
-    opacity: 0, y: 18, scale: .96, duration: .65, stagger: .14,
-    ease: 'back.out(1.3)',
-    scrollTrigger: { trigger: '#calendar', start: 'top 84%', once: true }
-  });
+/* ── GALERÍA: rueda 3D (formato boda-veronica-y-andres) ── */
+function initWheel() {
+  var ring = document.getElementById('wheel-ring');
+  if (!ring) return;
+  var cards = ring.querySelectorAll('.wheel-card'), n = cards.length;
+  var radius = Math.min(210, Math.round(window.innerWidth * 0.52));
+  var rot = 0, vel = 0, isDrag = false, startX = 0, startRot = 0, lastX = 0, rafId = null, auto = true;
+  cards.forEach(function (c, i) { c.style.transform = 'rotateY(' + (360 / n * i) + 'deg) translateZ(' + radius + 'px)'; });
+  function setRot() { ring.style.transform = 'rotateY(' + rot + 'deg)'; }
+  setRot();
+  function inertia() {
+    if (isDrag) return;
+    rot += vel; vel *= 0.94; setRot();
+    if (Math.abs(vel) > 0.05) rafId = requestAnimationFrame(inertia);
+  }
+  function down(x) { isDrag = true; auto = false; ring.classList.add('dragging'); startX = x; lastX = x; startRot = rot; vel = 0; if (rafId) cancelAnimationFrame(rafId); }
+  function move(x) { if (!isDrag) return; rot = startRot + (x - startX) * 0.45; vel = (x - lastX) * 0.5; lastX = x; setRot(); }
+  function up() { if (!isDrag) return; isDrag = false; ring.classList.remove('dragging'); rafId = requestAnimationFrame(inertia); }
+  ring.addEventListener('mousedown', function (e) { e.preventDefault(); down(e.clientX); });
+  window.addEventListener('mousemove', function (e) { move(e.clientX); });
+  window.addEventListener('mouseup', up);
+  ring.addEventListener('touchstart', function (e) { down(e.touches[0].clientX); }, { passive: true });
+  ring.addEventListener('touchmove', function (e) { move(e.touches[0].clientX); }, { passive: true });
+  ring.addEventListener('touchend', up);
+  (function spin() { if (auto && !isDrag) { rot += 0.12; setRot(); } requestAnimationFrame(spin); })();
+}
 
-  // Timeline — line draws, rows fade in
-  ScrollTrigger.create({
-    trigger: '#itinerary', start: 'top 72%', once: true,
-    onEnter() {
-      const wrap = document.getElementById('tlWrap');
-      gsap.to('#tlTrack', { height: wrap.offsetHeight - 16, duration: 2.6, ease: 'power1.inOut' });
-      gsap.from('.tl-row', { opacity: 0, x: -18, duration: .55, stagger: .13, ease, delay: .15 });
-      document.querySelectorAll('.tl-dot').forEach((d, i) => {
-        setTimeout(() => d.classList.add('on'), (300 + i * 130));
-      });
-    }
-  });
-
-  // Dress code
-  gsap.from('.dc-sub', {
-    opacity: 0, y: 18, duration: .65, ease,
-    scrollTrigger: { trigger: '#dresscode', start: 'top 82%', once: true }
-  });
-  gsap.set('.pal-sw', { scale: 0 });
-  ScrollTrigger.create({
-    trigger: '#palette', start: 'top 86%', once: true,
-    onEnter() {
-      gsap.to('.pal-sw', { scale: 1, duration: .55, stagger: .09, ease: 'back.out(2.2)' });
-      gsap.from('#dcNote', { opacity: 0, x: -18, duration: .65, delay: .45, ease });
-    }
-  });
-
-  // Family
-  gsap.from('.fam-ttl', {
-    opacity: 0, y: 18, duration: .6, stagger: .2, ease,
-    scrollTrigger: { trigger: '#family', start: 'top 78%', once: true }
-  });
-  gsap.from('.fam-card', {
-    opacity: 0, y: 20, duration: .55, stagger: .08, ease,
-    scrollTrigger: { trigger: '#family', start: 'top 78%', once: true }
-  });
-
-  // Kids policy
-  gsap.from('.kp-card', {
-    opacity: 0, y: 24, duration: .7, ease,
-    scrollTrigger: { trigger: '#kids-policy', start: 'top 82%', once: true }
-  });
-
-  // Gifts
-  gsap.from('.gf-card', {
-    opacity: 0, y: 22, duration: .6, stagger: .11, ease,
-    scrollTrigger: { trigger: '#gifts', start: 'top 80%', once: true }
-  });
-
-  // Album
-  gsap.from('.alb-qr-frame', {
-    opacity: 0, scale: .86, duration: .75, ease: 'back.out(1.4)',
-    scrollTrigger: { trigger: '#album', start: 'top 80%', once: true }
-  });
-  gsap.from(['.alb-sub','.alb-scan','.alb-btn','.alb-hint'], {
-    opacity: 0, y: 18, duration: .6, stagger: .1, ease,
-    scrollTrigger: { trigger: '#album', start: 'top 80%', once: true }
-  });
-
-  // Gallery
-  gsap.from('.g-item', {
-    opacity: 0, scale: .9, duration: .65, stagger: .1,
-    ease: 'power3.out',
-    scrollTrigger: { trigger: '#gallery', start: 'top 82%', once: true }
-  });
-
-  // RSVP form fields
-  gsap.from(['#fg1','#fg2','#fg4'], {
-    opacity: 0, y: 18, duration: .55, stagger: .12, ease,
-    scrollTrigger: { trigger: '#rsvp', start: 'top 80%', once: true }
-  });
-
-  // Footer
-  gsap.from('#footer > *', {
-    opacity: 0, y: 20, duration: .6, stagger: .1, ease,
-    scrollTrigger: { trigger: '#footer', start: 'top 90%', once: true }
+/* ── LLUVIA DE SOBRES (formato boda-jeffersson-y-vanessa) ── */
+function initGift() {
+  var sec = document.getElementById('gifts'), rain = document.getElementById('envRain'),
+      btn = document.getElementById('envGift'), body = document.getElementById('envGiftBody'),
+      hint = document.getElementById('envGiftHint');
+  if (!sec || !rain || !btn) return;
+  var raining = true, landed = false, spawnCall = null, alive = 0, MAX_ALIVE = 18;
+  function makeEnvelope() {
+    if (alive >= MAX_ALIVE) return;
+    alive++;
+    var el = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    el.setAttribute('viewBox', '0 0 34 24'); el.setAttribute('class', 'env-rain-item');
+    var w = 16 + Math.random() * 16;
+    el.style.width = w + 'px'; el.style.height = (w * 24 / 34) + 'px'; el.style.left = (Math.random() * 100) + '%';
+    el.innerHTML = '<rect x="1" y="1" width="32" height="22" rx="2.5" fill="#FFFBF2" stroke="#8a8e00" stroke-width="1.2"/>' +
+                   '<path d="M1 1 L17 13 L33 1" fill="none" stroke="#B08A22" stroke-width="1.2" stroke-linejoin="round"/>';
+    rain.appendChild(el);
+    var H = sec.offsetHeight + 80, dur = 5 + Math.random() * 4;
+    function kill() { if (el.parentNode) { el.remove(); alive--; } }
+    gsap.timeline({ onComplete: kill })
+      .fromTo(el, { y: -46, x: 0, rotation: (Math.random() - .5) * 50, opacity: 0 },
+                  { y: H, x: (Math.random() - .5) * 70, rotation: (Math.random() - .5) * 160, duration: dur, ease: 'none' }, 0)
+      .fromTo(el, { opacity: 0 }, { opacity: .8, duration: dur * .18, ease: 'power1.out' }, 0)
+      .to(el, { opacity: 0, duration: dur * .25, ease: 'power1.in' }, dur * .75);
+  }
+  function scheduleSpawn() { spawnCall = gsap.delayedCall(.52, function () { if (!raining) return; makeEnvelope(); scheduleSpawn(); }); }
+  function stopRain() {
+    raining = false; if (spawnCall) spawnCall.kill();
+    gsap.to(rain, { opacity: 0, duration: 1.1, ease: 'power2.out', onComplete: function () { rain.innerHTML = ''; alive = 0; } });
+  }
+  function land() {
+    if (landed) return; landed = true; stopRain();
+    gsap.fromTo(btn, { opacity: 0, y: -150, rotation: -12, scale: .82 },
+      { opacity: 1, y: 0, rotation: 0, scale: 1, duration: 1.15, ease: 'back.out(1.5)',
+        onComplete: function () { if (body) body.classList.add('landed'); if (hint) hint.classList.add('show'); } });
+  }
+  for (var i = 0; i < 7; i++) gsap.delayedCall(i * .26, makeEnvelope);
+  scheduleSpawn();
+  ScrollTrigger.create({ trigger: sec, start: 'center 60%', once: true, onEnter: land, onEnterBack: land });
+  /* red de seguridad: si el trigger no dispara, el sobre aparece igual */
+  setTimeout(function () {
+    var r = sec.getBoundingClientRect();
+    if (!landed && r.top < window.innerHeight) land();
+  }, 4000);
+  window.addEventListener('scroll', function chk() {
+    var r = sec.getBoundingClientRect();
+    if (r.top < window.innerHeight * 0.45) { land(); window.removeEventListener('scroll', chk); }
+  }, { passive: true });
+  btn.addEventListener('click', function (e) {
+    e.preventDefault(); if (!landed) return;
+    var open = btn.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open && body) body.classList.remove('landed');
   });
 }
 
