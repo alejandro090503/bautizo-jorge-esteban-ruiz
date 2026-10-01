@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#FBF8F1">
-  <title>Jorge Esteban Ruiz · Mi Bautizo · 27 · XI · MMXXVI</title>
+  <title>Jorge Esteban Ruiz · Mi Bautizo · 27 Noviembre 2026</title>
   <meta name="description" content="Bautizo de Jorge Esteban Ruiz — viernes 27 de noviembre de 2026, Mazatlán, Sinaloa.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Bautizo de Jorge Esteban Ruiz">
@@ -784,6 +784,42 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 @keyframes mbHalo{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(1.7)}}
 @media (prefers-reduced-motion:reduce){.music-btn::before,.mb-eq i,.music-btn.on .mb-halo{animation:none!important}}
 @media (max-width:430px){.hd-y{display:block;margin-top:4px}.hd-dot{display:none}}
+
+/* ════════════════ V2 · cambios del cliente ════════════════ */
+.flipx::before{transform:scaleX(-1)}
+/* hero: "Mi Bautizo" arriba del nombre */
+.h-we{margin:0 0 14px!important;letter-spacing:8px}
+#hero .h-clip + .h-clip{margin-top:-.12em}
+.h-bg{top:-2%!important;bottom:-14%!important}
+.h-bg img{object-position:36% 0;filter:brightness(.86) saturate(1.02)}
+#hero{justify-content:flex-end!important;padding-bottom:clamp(74px,10.5vh,104px)!important}
+.h-date-wrap{margin-top:16px!important}
+#hero .gline{margin:12px auto!important}
+.h-scroll{bottom:22px!important}
+.h-scroll-line{height:26px!important}
+.h-ov{background:linear-gradient(to bottom,rgba(20,22,12,.12) 0%,rgba(20,22,12,.04) 34%,rgba(20,22,12,.48) 54%,rgba(20,22,12,.7) 76%,rgba(20,22,12,.5) 88%,rgba(251,248,241,0) 93%,var(--paper) 100%)}
+/* secciones oscuras: la imagen va a su ancho natural, debajo del fundido */
+.dark.bgx::before{background-size:100% auto;background-position:center 230px;background-repeat:no-repeat;background-color:transparent}
+#family.dark{padding-top:calc(215px + min(100vw,430px)*.93);padding-bottom:380px}
+#family.dark.bgx::before{background-position:center 215px}
+#family.dark .fam-quote{color:#F7F3EC}
+#family.dark .fam-block{background:rgba(255,253,247,.96);border-color:rgba(233,207,122,.6);box-shadow:0 18px 44px rgba(0,0,0,.35)}
+#gallery{padding-top:calc(250px + min(100vw,430px)*.55)!important}
+#footer{padding-top:calc(250px + min(100vw,430px)*.62)!important}
+/* cuenta bancaria */
+.bank-card{max-width:340px;margin:44px auto 0;text-align:center;background:rgba(255,255,255,.9);border:1px solid rgba(176,138,34,.4);border-radius:24px;padding:26px 20px 24px;box-shadow:0 14px 34px rgba(90,94,0,.1);position:relative}
+.bank-card::before{content:'';position:absolute;inset:7px;border:1px dashed rgba(138,142,0,.3);border-radius:18px;pointer-events:none}
+.bank-ic{font-size:34px;color:var(--olive-dk);display:block;margin-bottom:4px}
+.bank-ttl{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--olive-dk)}
+.bank-sub{font-size:16px;color:var(--text2);line-height:1.55;margin:8px 0 14px}
+.bank-lbl{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--text2);margin-top:10px}
+.bank-clabe{font-family:'Lato',sans-serif;font-weight:700;font-size:clamp(17px,5.3vw,21px);letter-spacing:1px;color:var(--text);margin-top:4px;word-break:break-all}
+.bank-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:700;color:var(--text);margin-top:2px;line-height:1.3}
+.bank-card .pill{margin-top:18px}
+/* sobre verde */
+#envelope-screen{background:#8FA083!important}
+.envelope-hint{color:#FFF8E6!important;text-shadow:0 1px 8px rgba(40,50,30,.55)!important}
+.envelope-hint::after{background:linear-gradient(90deg,transparent,#F2DB94,transparent)!important}
   </style>
 </head>
 <body>
@@ -791,7 +827,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 <!-- ENVELOPE SCREEN -->
 <div id="envelope-screen" role="button" aria-label="Toca para abrir tu invitación">
   <img id="env-image" src="sobre.jpg" alt="Sobre invitación del bautizo de Jorge Esteban" />
-  <video id="env-video" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/sobre-apertura.mp4" poster="sobre.jpg" playsinline webkit-playsinline muted preload="auto"></video>
+  <video id="env-video" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/sobre2.mp4" poster="sobre.jpg" playsinline webkit-playsinline muted preload="auto"></video>
   <p class="envelope-hint" id="env-hint">Toca para abrir</p>
 </div>
 <div id="env-flash"></div>
@@ -822,20 +858,19 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 <!-- ═══ 1. HERO ═══ -->
 <section id="hero">
   <div class="h-bg" id="heroBg">
-    <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/hero.jpg" alt="Jorge Esteban Ruiz" loading="eager" id="heroPic">
+    <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/hero2.jpg" alt="Jorge Esteban Ruiz" loading="eager" id="heroPic">
   </div>
   <div class="h-ov"></div>
   <div class="h-frame"></div>
   <div class="h-particles" id="hPart"></div>
 
   <div class="h-cnt" id="hCnt">
-    <div class="h-clip"><span class="h-name gold" id="hN1">Jorge</span></div>
-    <div class="h-amp-clip"><span class="h-amp" id="hAmp">✦</span></div>
-    <div class="h-clip"><span class="h-name gold" id="hN2">Esteban</span></div>
     <p class="h-we" id="hWe">Mi Bautizo</p>
+    <div class="h-clip"><span class="h-name gold" id="hN1">Jorge</span></div>
+    <div class="h-clip"><span class="h-name gold" id="hN2">Esteban</span></div>
     <div class="gline" style="margin-top:18px" id="hLine"></div>
     <div class="h-date-wrap" id="hDate">
-      <p class="h-date">27 · Noviembre<span class="hd-y"><span class="hd-dot"> · </span>MMXXVI</span></p>
+      <p class="h-date">27 Noviembre 2026</p>
       <p class="h-city">Mazatlán · Sinaloa</p>
     </div>
   </div>
@@ -843,7 +878,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 </section>
 
 <!-- ═══ 2. CUENTA REGRESIVA ═══ -->
-<section id="countdown" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-nubes.jpg);--bgo:.75">
+<section id="countdown" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/f-esquinas.jpg);--bgo:.9">
   <span class="lbl rv">Mi gran día llega en</span>
   <h2 class="ttl rv">Cuenta Regresiva</h2>
   <div class="gline"></div>
@@ -857,7 +892,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 </section>
 
 <!-- ═══ 3. PADRES Y PADRINOS ═══ -->
-<section id="family" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-olivo.jpg);--bgo:.8">
+<section id="family" class="bgx dark" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/f-emblema.jpg);--bgo:1">
   <span class="lbl rv">Con amor</span>
   <h2 class="ttl rv">Mis Padres y Padrinos</h2>
   <div class="gline"></div>
@@ -883,7 +918,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 </section>
 
 <!-- ═══ 4. CEREMONIA Y RECEPCIÓN ═══ -->
-<section id="location" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-arcos.jpg);--bgo:.6">
+<section id="location" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/f-cruz.jpg);--bgo:.95">
   <span class="lbl rv">¿Dónde y cuándo?</span>
   <h2 class="ttl rv">La Celebración</h2>
   <div class="gline"></div>
@@ -923,7 +958,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 </section>
 
 <!-- ═══ 6. ITINERARIO ═══ -->
-<section id="itinerary" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-patron.jpg);--bgo:.4">
+<section id="itinerary" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/f-paloma.jpg);--bgo:.9">
   <span class="lbl rv">Así será el día</span>
   <h2 class="ttl rv">Itinerario</h2>
   <div class="gline"></div>
@@ -946,7 +981,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 </section>
 
 <!-- ═══ 7. HOSPEDAJE ═══ -->
-<section id="lodging" class="bgx plain">
+<section id="lodging" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/f-liso.jpg);--bgo:.9">
   <span class="lbl rv">Para tu estancia</span>
   <h2 class="ttl rv">Hospedaje Sugerido</h2>
   <div class="gline"></div>
@@ -975,7 +1010,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 </section>
 
 <!-- ═══ 8. LLUVIA DE SOBRES ═══ -->
-<section id="gifts" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-acuarela.jpg);--bgo:.55">
+<section id="gifts" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/f-bandas.jpg);--bgo:.9">
   <div class="env-rain" id="envRain" aria-hidden="true"></div>
   <div class="env-stage">
     <span class="lbl">Tu presencia es mi mejor regalo</span>
@@ -984,22 +1019,22 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
     <button class="env-interactive" id="envGift" type="button" aria-label="Sobre — toca para abrir" aria-expanded="false">
       <div class="env-body" id="envGiftBody">
         <svg class="env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
-          <defs><linearGradient id="envPaper" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FFFBF2"/><stop offset="100%" stop-color="#F7E7CE"/></linearGradient></defs>
-          <rect x="18" y="52" width="224" height="132" rx="8" fill="url(#envPaper)" stroke="rgba(138,142,0,.55)" stroke-width="1.4"/>
-          <path d="M18 184 L130 110 L242 184" stroke="rgba(138,142,0,.32)" stroke-width="1" fill="none"/>
+          <defs><linearGradient id="envPaper" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#93A487"/><stop offset="100%" stop-color="#A8B89C"/></linearGradient></defs>
+          <rect x="18" y="52" width="224" height="132" rx="8" fill="url(#envPaper)" stroke="rgba(70,84,60,.7)" stroke-width="1.4"/>
+          <path d="M18 184 L130 110 L242 184" stroke="rgba(70,84,60,.45)" stroke-width="1" fill="none"/>
         </svg>
         <div class="env-flap-wrap" aria-hidden="true">
           <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%;display:block">
-            <defs><linearGradient id="envFlap" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#F7E7CE"/><stop offset="100%" stop-color="#FFFBF2"/></linearGradient></defs>
-            <path d="M0 0 L112 86 L224 0 Z" fill="url(#envFlap)" stroke="rgba(138,142,0,.55)" stroke-width="1.5" stroke-linejoin="round"/>
+            <defs><linearGradient id="envFlap" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#9DAE91"/><stop offset="100%" stop-color="#B3C2A8"/></linearGradient></defs>
+            <path d="M0 0 L112 86 L224 0 Z" fill="url(#envFlap)" stroke="rgba(70,84,60,.7)" stroke-width="1.5" stroke-linejoin="round"/>
           </svg>
         </div>
         <svg class="env-seal" viewBox="0 0 60 60" aria-hidden="true">
           <defs><linearGradient id="sealG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F2DB94"/><stop offset="50%" stop-color="#D4AF37"/><stop offset="100%" stop-color="#8C6A12"/></linearGradient></defs>
-          <circle cx="30" cy="30" r="28" fill="#6b6e00"/>
-          <circle cx="30" cy="30" r="28" fill="none" stroke="#3f4100" stroke-width="2" opacity=".55"/>
-          <circle cx="30" cy="30" r="21.5" fill="none" stroke="url(#sealG)" stroke-width="1.3"/>
-          <text x="30" y="36.5" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="19" fill="url(#sealG)">JER</text>
+          <circle cx="30" cy="30" r="28" fill="url(#sealG)"/>
+          <circle cx="30" cy="30" r="28" fill="none" stroke="#8C6A12" stroke-width="2" opacity=".6"/>
+          <circle cx="30" cy="30" r="21.5" fill="none" stroke="#7a5c0e" stroke-width="1.1" opacity=".8"/>
+          <text x="30" y="36.5" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="19" fill="#6E520B">JER</text>
         </svg>
       </div>
       <div class="env-open-content" aria-live="polite">
@@ -1009,6 +1044,17 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
       </div>
     </button>
     <p class="env-tap-hint" id="envGiftHint">Toca para abrir</p>
+
+    <div class="bank-card" id="bankCard">
+      <i class="ph-light ph-bank bank-ic"></i>
+      <p class="bank-ttl">Transferencia</p>
+      <p class="bank-sub">Si lo prefieres, también puedes hacerlo por transferencia.</p>
+      <p class="bank-lbl">CLABE interbancaria</p>
+      <p class="bank-clabe" id="clabeNum">014744606306449477</p>
+      <p class="bank-lbl">A nombre de</p>
+      <p class="bank-name">Karla Eloisa Uriarte Orozco</p>
+      <button class="pill" type="button" onclick="copyClabe()"><i class="ph-light ph-copy"></i> Copiar CLABE</button>
+    </div>
   </div>
 </section>
 
@@ -1030,7 +1076,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 </section>
 
 <!-- ═══ 10. CÓDIGO DE VESTIMENTA ═══ -->
-<section id="dresscode" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-nubes.jpg);--bgo:.55">
+<section id="dresscode" class="bgx flipx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/f-esquinas.jpg);--bgo:.9">
   <span class="lbl rv">Vestimenta</span>
   <h2 class="ttl rv">Código de Vestimenta</h2>
   <div class="gline"></div>
@@ -1051,7 +1097,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 </section>
 
 <!-- ═══ 11. GALERÍA · RUEDA 3D ═══ -->
-<section id="gallery" class="bgx dark" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-oscuro.jpg);--bgo:.85">
+<section id="gallery" class="bgx dark" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/f-osc-polvo.jpg);--bgo:1">
   <span class="lbl rv">Mis primeros días</span>
   <h2 class="ttl rv">Galería</h2>
   <div class="gline"></div>
@@ -1069,7 +1115,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 </section>
 
 <!-- ═══════════════ 12. RSVP ═════════════════════════ -->
-<section id="rsvp" class="bgx plain">
+<section id="rsvp" class="bgx flipx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/f-liso.jpg);--bgo:.85">
   <span class="lbl">Confirmación de asistencia</span>
   <h2 class="ttl">¿Me acompañas?</h2>
   <div class="gline"></div>
@@ -1131,11 +1177,11 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 
 
 <!-- ═══ 13. FOOTER ═══ -->
-<footer id="footer" class="bgx dark" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/bg-oscuro.jpg);--bgo:.7;position:relative;isolation:isolate;overflow:hidden">
+<footer id="footer" class="bgx dark" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/f-osc-cruz.jpg);--bgo:1;position:relative;isolation:isolate;overflow:hidden">
   <div class="ft-orn">✦ · ✦ · ✦</div>
   <div class="ft-nms">Jorge Esteban</div>
   <div class="gline" style="margin-top:22px"></div>
-  <p class="ft-dt">27 · Noviembre · MMXXVI</p>
+  <p class="ft-dt">27 Noviembre 2026</p>
   <p class="ft-note">Mazatlán · Sinaloa · México<br>Con amor, la familia Ruiz Uriarte</p>
   <div class="el-sep"></div>
   <a href="https://www.instagram.com/elysium.invitaciones/" target="_blank" rel="noopener" class="el-credit">
@@ -1253,13 +1299,12 @@ window.addEventListener('scroll', () => {
 function heroAnim() {
   // Set initial states
   gsap.set(['#hWe','#hLine','#hDate','#hScroll'], { opacity: 0 });
-  gsap.set(['#hN1','#hN2','#hAmp'], { yPercent: 35, opacity: 0 });
+  gsap.set(['#hN1','#hN2'], { yPercent: 35, opacity: 0 });
 
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
   tl
     .to('#hWe',    { opacity: 1, duration: .7 }, .1)
     .to('#hN1',    { yPercent: 0, opacity: 1, duration: 1.1 }, .45)
-    .to('#hAmp',   { yPercent: 0, opacity: 1, duration: .8 }, .7)
     .to('#hN2',    { yPercent: 0, opacity: 1, duration: 1.1 }, .82)
     .to('#hLine',  { opacity: .7, duration: .6 }, 1.15)
     .to('#hDate',  { opacity: 1, duration: .7  }, 1.28)
@@ -1412,6 +1457,12 @@ function scrollAnims() {
 
   /* 8 · Lluvia de sobres: encabezado (el sobre lo maneja initGift) */
   scene(document.getElementById('gifts'), function (tl, s) { head(tl, s); });
+  scene(document.getElementById('bankCard'), function (tl, c) {
+    tl.fromTo(c, { opacity: 0, y: 46, scale: .94 }, { opacity: 1, y: 0, scale: 1, duration: 1 }, 0)
+      .fromTo(c.querySelector('.bank-ic'), { scale: 0, rotate: -40 }, { scale: 1, rotate: 0, duration: .9, ease: 'elastic.out(1,.5)' }, .25)
+      .fromTo(q(c, '.bank-ttl, .bank-sub, .bank-lbl, .bank-clabe, .bank-name'), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: .6, stagger: .08 }, .4)
+      .fromTo(c.querySelector('.pill'), { opacity: 0, scale: .6 }, { opacity: 1, scale: 1, duration: .8, ease: 'back.out(2.2)' }, 1);
+  });
 
   /* 9 · Álbum: el QR gira como una tarjeta */
   scene(document.getElementById('album'), function (tl, s) {
@@ -1568,7 +1619,7 @@ function initGift() {
     el.setAttribute('viewBox', '0 0 34 24'); el.setAttribute('class', 'env-rain-item');
     var w = 16 + Math.random() * 16;
     el.style.width = w + 'px'; el.style.height = (w * 24 / 34) + 'px'; el.style.left = (Math.random() * 100) + '%';
-    el.innerHTML = '<rect x="1" y="1" width="32" height="22" rx="2.5" fill="#FFFBF2" stroke="#8a8e00" stroke-width="1.2"/>' +
+    el.innerHTML = '<rect x="1" y="1" width="32" height="22" rx="2.5" fill="#A8B89C" stroke="#5f7052" stroke-width="1.2"/>' +
                    '<path d="M1 1 L17 13 L33 1" fill="none" stroke="#B08A22" stroke-width="1.2" stroke-linejoin="round"/>';
     rain.appendChild(el);
     var H = sec.offsetHeight + 80, dur = 5 + Math.random() * 4;
