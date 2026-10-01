@@ -791,7 +791,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 .h-we{margin:0 0 14px!important;letter-spacing:8px}
 #hero .h-clip + .h-clip{margin-top:-.12em}
 .h-bg{top:-2%!important;bottom:-14%!important}
-.h-bg img{object-position:36% 0;filter:brightness(.86) saturate(1.02)}
+.h-bg img{object-position:50% 0;filter:brightness(.86) saturate(1.02)}
 #hero{justify-content:flex-end!important;padding-bottom:clamp(74px,10.5vh,104px)!important}
 .h-date-wrap{margin-top:16px!important}
 #hero .gline{margin:12px auto!important}
@@ -820,6 +820,13 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 #envelope-screen{background:#8FA083!important}
 .envelope-hint{color:#FFF8E6!important;text-shadow:0 1px 8px rgba(40,50,30,.55)!important}
 .envelope-hint::after{background:linear-gradient(90deg,transparent,#F2DB94,transparent)!important}
+/* fondos con símbolo: la imagen va a su ancho natural y el contenido empieza debajo del símbolo */
+.bgx.sym{--iw:min(100vw,430px)}
+.bgx.sym::before{top:20px;bottom:auto;height:calc(var(--iw)*1.79);background-image:var(--bgimg),var(--bgimg);background-blend-mode:multiply;background-size:100% 100%;opacity:.92;filter:saturate(.85) brightness(1.04);
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 120px,#000 calc(100% - 170px),transparent 100%);
+          mask-image:linear-gradient(to bottom,transparent 0,#000 120px,#000 calc(100% - 170px),transparent 100%)}
+#location.sym{padding-top:calc(40px + var(--iw)*.47)}
+#itinerary.sym-dove{padding-top:calc(40px + var(--iw)*.70)}
   </style>
 </head>
 <body>
@@ -858,7 +865,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 <!-- ═══ 1. HERO ═══ -->
 <section id="hero">
   <div class="h-bg" id="heroBg">
-    <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/hero2.jpg" alt="Jorge Esteban Ruiz" loading="eager" id="heroPic">
+    <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/hero3.jpg" alt="Jorge Esteban Ruiz" loading="eager" id="heroPic">
   </div>
   <div class="h-ov"></div>
   <div class="h-frame"></div>
@@ -918,7 +925,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 </section>
 
 <!-- ═══ 4. CEREMONIA Y RECEPCIÓN ═══ -->
-<section id="location" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/f-cruz.jpg);--bgo:.95">
+<section id="location" class="bgx sym" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/f-cruz.jpg);--bgo:.95">
   <span class="lbl rv">¿Dónde y cuándo?</span>
   <h2 class="ttl rv">La Celebración</h2>
   <div class="gline"></div>
@@ -958,7 +965,7 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 </section>
 
 <!-- ═══ 6. ITINERARIO ═══ -->
-<section id="itinerary" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/f-paloma.jpg);--bgo:.9">
+<section id="itinerary" class="bgx sym sym-dove" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/f-paloma.jpg);--bgo:.9">
   <span class="lbl rv">Así será el día</span>
   <h2 class="ttl rv">Itinerario</h2>
   <div class="gline"></div>
