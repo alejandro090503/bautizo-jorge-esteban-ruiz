@@ -842,6 +842,17 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
           mask-image:linear-gradient(to bottom,transparent 0,#000 120px,#000 calc(100% - 170px),transparent 100%)}
 #location.sym{padding-top:calc(40px + var(--iw)*.47)}
 #itinerary.sym-dove{padding-top:calc(40px + var(--iw)*.70)}
+/* ── Frase: "Un regalo del cielo, enviado con amor" ── */
+#blessing{text-align:center;padding:clamp(54px,14vw,80px) 22px clamp(30px,8vw,48px)}
+.bl-orn{display:flex;align-items:center;justify-content:center;gap:12px;color:#B08A22}
+.bl-orn i{font-size:22px}
+.bl-line{width:clamp(54px,18vw,80px);height:1px;background:linear-gradient(to right,transparent,#C9A64A,transparent)}
+.bl-dot{width:5px;height:5px;border-radius:50%;background:#C9A64A}
+.bl-orn-b{margin-top:6px}
+.bl-quote{font-family:'Great Vibes',cursive;font-size:clamp(38px,11.5vw,52px);line-height:1.15;margin:14px auto 10px;max-width:360px;
+  display:inline-block;padding:.14em .4em .3em}
+.bl-quote span{display:block}
+.bl-l2{font-size:.86em;margin-top:.05em}
   </style>
 </head>
 <body>
@@ -900,6 +911,13 @@ section{padding:clamp(58px,15vw,86px) clamp(16px,5.6vw,28px)}
 </section>
 
 <!-- ═══ 2. CUENTA REGRESIVA ═══ -->
+<!-- ═══ 1.5 FRASE ═══ -->
+<section id="blessing" class="bgx plain">
+  <div class="bl-orn"><span class="bl-line"></span><i class="ph-light ph-sparkle"></i><span class="bl-line"></span></div>
+  <p class="bl-quote gold"><span class="bl-l1">Un regalo del cielo,</span><span class="bl-l2">enviado con amor</span></p>
+  <div class="bl-orn bl-orn-b"><span class="bl-line"></span><span class="bl-dot"></span><span class="bl-line"></span></div>
+</section>
+
 <section id="countdown" class="bgx" style="--bgimg:url(https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/img/bautizo-jorge-esteban-ruiz/f-esquinas.jpg);--bgo:.9">
   <span class="lbl rv">Mi gran día llega en</span>
   <h2 class="ttl rv">Cuenta Regresiva</h2>
@@ -1408,6 +1426,15 @@ function splitWords(el) {
 
 function scrollAnims() {
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 1.5 · Frase: las líneas se abren y la frase aparece desenfocada */
+  scene(document.getElementById('blessing'), function (tl, s) {
+    tl.fromTo(q(s, '.bl-orn:first-child .bl-line'), { scaleX: 0 }, { scaleX: 1, duration: 1, ease: 'power2.inOut' }, 0)
+      .fromTo(s.querySelector('.bl-orn i'), { opacity: 0, scale: 0, rotate: -90 }, { opacity: 1, scale: 1, rotate: 0, duration: .9, ease: 'back.out(2)' }, .2)
+      .fromTo(s.querySelector('.bl-l1'), { opacity: 0, y: 18, filter: 'blur(8px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.2 }, .45)
+      .fromTo(s.querySelector('.bl-l2'), { opacity: 0, y: 18, filter: 'blur(8px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.2 }, .9)
+      .fromTo(q(s, '.bl-orn-b .bl-line, .bl-orn-b .bl-dot'), { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: .9, ease: 'power2.inOut' }, 1.4);
+  });
 
   /* 2 · Cuenta regresiva: cajas que giran como tarjetas */
   scene(document.getElementById('countdown'), function (tl, s) {
